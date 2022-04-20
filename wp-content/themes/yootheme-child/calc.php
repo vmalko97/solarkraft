@@ -3,7 +3,7 @@
 Template Name: Calc
  */
 
-get_header();
+get_header('calc');
 ?>
 
 <section class="address">
@@ -38,4 +38,4 @@ get_header();
 </section>
 
 <?php
-get_footer();
+get_footer('calc');
