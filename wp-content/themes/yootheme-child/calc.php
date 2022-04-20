@@ -37,5 +37,7 @@ get_header('calc');
 	</div>
 </section>
 
+    <div class="address" id="map"></div>
+
 <?php
 get_footer('calc');
