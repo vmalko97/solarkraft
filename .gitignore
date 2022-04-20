@@ -1,3 +1,5 @@
 wp-content/uploads/*
+wp-content/backups-dup-lite/
+wp-content/themes/yootheme/cache/
 wp-config.php
 *.log
