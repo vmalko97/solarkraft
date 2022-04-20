@@ -18,7 +18,7 @@ get_header('calc');
 		</div>
 		<form class="address__form">
 			<label for="address__input-wrap">
-				<input class="address__input" type="text" name="adress" value="" placeholder="Adress">
+				<input class="address__input autocomplete_address" type="text" name="adress" value="" placeholder="Address">
 			</label>
 			<button class="address__btn" type="button" name="button"></button>
 		</form>

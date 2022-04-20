@@ -22,8 +22,6 @@ list($config, $view) = app(Config::class, View::class);
         </div>
     <?php endif ?>
 
-    </div>
-    </div>
 <?php endif ?>
 
 <?php dynamic_sidebar("bottom:section") ?>
@@ -34,7 +32,8 @@ list($config, $view) = app(Config::class, View::class);
 <?php if ($config('~site.layout') == 'boxed') : ?>
     </div>
 <?php endif ?>
-
+</div>
+</div>
 <?php wp_footer() ?>
 </body>
 </html>
