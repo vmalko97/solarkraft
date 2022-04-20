@@ -3,7 +3,8 @@
 add_action('wp_enqueue_scripts', function (){
     wp_enqueue_style('child_style', get_stylesheet_directory_uri().'/style.css');
 
-    wp_enqueue_script('google_maps', get_stylesheet_directory_uri().'/assets/js/map.js');
+    wp_enqueue_script( 'jquery-3', get_stylesheet_directory_uri().'/assets/js/jquery-3.6.0.min.js', [], false, true );
+    wp_enqueue_script('google_maps', get_stylesheet_directory_uri().'/assets/js/map.js', ['jquery-3']);
     wp_enqueue_script( 'google-places', 'https://maps.googleapis.com/maps/api/js?key=' . get_field( 'google_api_key', 'option' ) . '&callback=initAutocomplete&libraries=places&v=weekly', [], false, true );
 },99);
 

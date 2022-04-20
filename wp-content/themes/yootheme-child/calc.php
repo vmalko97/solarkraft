@@ -18,9 +18,9 @@ get_header('calc');
 		</div>
 		<form class="address__form">
 			<label for="address__input-wrap">
-				<input class="address__input autocomplete_address" type="text" name="adress" value="" placeholder="Address">
+				<input class="address__input autocomplete_address" type="text" name="address" value="" placeholder="Address">
 			</label>
-			<button class="address__btn" type="button" name="button"></button>
+			<button class="address__btn init_marker" type="button" name="button"></button>
 		</form>
 	</div>
 	<div class="address__rating-block">
