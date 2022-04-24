@@ -145,9 +145,45 @@ body {
 }
 
 .map {
+	display: none;
 	width: 80vw;
-	height: 500px;
+	height: 70vh;
+	margin: 0 auto 20px;
+}
+
+.map-form {
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+}
+
+.map-form__btn {
+	border-radius: 40px;
+	min-width: 160px;
+	min-height: 48px;
+	padding: 12px 25px;
+	cursor: pointer;
+	font-family: Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 600;
 	margin: 0 auto;
+	display: inline-flex;
+	-webkit-box-align: center;
+	align-items: center;
+	text-align: center;
+	transition: padding 0.1s ease 0s, background-image 0.1s ease 0s, background 0.1s ease 0s, background-color 0.1s ease 0s, color 0.1s ease 0s;
+	letter-spacing: 0.0125em;
+	position: relative;
+	color: white;
+	background-color: rgb(30, 64, 180);
+	background-image: linear-gradient(to right, rgb(49, 86, 196), rgb(30, 64, 180));
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+}
+
+.map-form__icon {
+	width: 20px;
+	height: 20px;
 }
 
 #address {

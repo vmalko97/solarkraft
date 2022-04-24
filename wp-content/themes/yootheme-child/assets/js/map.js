@@ -11,6 +11,7 @@ function initGMap() {
 function initMap() {
      map = new google.maps.Map(document.getElementById("map"), {
         zoom: 10,
+		zoomControl: true,
         center: {lat: 0, lng: 0},
         disableDefaultUI: true,
         mapTypeId: 'satellite'
@@ -78,4 +79,3 @@ $(document).ready(function () {
         $('.submit-order').show();
     });
 });
-
