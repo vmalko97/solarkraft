@@ -62,6 +62,10 @@ get_header('calc');
 						<span class="calc__value calc__value--max">5000 kr</span>
 					</div>
 				</div>
+				<label class="calc__switch" for="switch">
+					<input type="checkbox" name="switch" id="switch">
+					<span class="calc__name">Inkludera batterier</span>
+				</label>
 			</div>
 			<div class="grid">
 				<div class="grid__item">
