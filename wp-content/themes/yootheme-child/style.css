@@ -190,7 +190,7 @@ body {
 	padding: 0;
 }
 
-.address {
+.address-form {
 	display: -webkit-flex;
 	display: -ms-flex;
 	display: flex;
@@ -1316,7 +1316,7 @@ body {
 		padding: 0 60px;
 	}
 
-	.address {
+	.address-form {
 		display: block;
 		min-height: 850px;
 		padding: 15vh 65px 5vh;

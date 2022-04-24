@@ -16,7 +16,23 @@ get_header();
 
     <p><a href="#">Få Offert</a></p>
 
+	<div class="address">
+		<form class="address__form">
+			<label for="address__input-wrap">
+				<picture class="address__icon">
+					<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 384 512" fill="currentColor"><path d="M192 96c-52.935 0-96 43.065-96 96s43.065 96 96 96 96-43.065 96-96-43.065-96-96-96zm0 160c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64zm0-256C85.961 0 0 85.961 0 192c0 77.413 26.97 99.031 172.268 309.67 9.534 13.772 29.929 13.774 39.465 0C357.03 291.031 384 269.413 384 192 384 85.961 298.039 0 192 0zm0 473.931C52.705 272.488 32 256.494 32 192c0-42.738 16.643-82.917 46.863-113.137S149.262 32 192 32s82.917 16.643 113.137 46.863S352 149.262 352 192c0 64.49-20.692 80.47-160 281.931z"></path></svg>
+				</picture>
+				<input class="address__input autocomplete_address" type="text" name="address" value="" placeholder="Address">
+			</label>
+			<button class="address__btn init_marker" type="button" name="button">
+				<svg width="1em" height="1em" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+					<path d="M10.758.671l8.571 8.571a1.071 1.071 0 010 1.516l-8.571 8.571a1.071 1.071 0 11-1.516-1.515l6.671-6.672H1.071a1.071 1.071 0 110-2.142h14.985L9.242 2.185A1.071 1.071 0 0110.758.671z" fill="currentColor" fill-rule="evenodd"></path>
+				</svg>
+			</button>
+		</form>
+	</div>
 </div>
+
 <h2>Installationer</h2>
 <ul>
     <li>
