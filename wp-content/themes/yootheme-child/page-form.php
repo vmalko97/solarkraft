@@ -54,6 +54,14 @@ get_header('calc');
 			<div class="calc__control">
 				<h3 class="calc__subtitle">Vad är din månadsräkning?</h3>
 				<p class="calc__desc">Din månadsräkning används för att beräkna mer exakta besparingar</p>
+				<input type="text" class="calc__num" value="2000" id="amount" data-min="1000" data-max="9000" readonly>
+				<div class="calc__range">
+					<div class="calc__range-line" id="slider"></div>
+					<div class="calc__values">
+						<span class="calc__value calc__value--min">1500 kr</span>
+						<span class="calc__value calc__value--max">5000 kr</span>
+					</div>
+				</div>
 			</div>
 			<div class="grid">
 				<div class="grid__item">
