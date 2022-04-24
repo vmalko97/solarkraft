@@ -230,17 +230,36 @@ get_header('calc');
 	</div>
 </div>
 
+<div class="modal-bg"></div>
 <div class="modal">
 	<div class="modal__content">
-		<h2>Få erbjudande</h2>
-		<p>Priserna du såg gäller till lördag 7 maj.</p>
-		<p>Lämna dina uppgifter, så ringer vi dig för att diskutera detaljerna i ditt erbjudande och svara på alla dina frågor.</p>
+		<h2 class="modal__title">Få erbjudande</h2>
+		<p class="modal__subtext">Priserna du såg gäller till lördag 7 maj.</p>
+		<p class="modal__text">Lämna dina uppgifter, så ringer vi dig för att diskutera detaljerna i ditt erbjudande och svara på alla dina frågor.</p>
 		<form class="form" action="index.html" method="post">
-			<label for="">Förnamn och efternamn</label>
-			<input type="text" name="" value="">
+			<div class="form__field-wrap">
+				<label class="form__label" for="">Förnamn och efternamn</label>
+				<input class="form__field" type="text">
+			</div>
+			<div class="form__field-wrap">
+				<label class="form__label" for="">Telefon</label>
+				<input class="form__field" type="text">
+			</div>
+			<div class="form__field-wrap">
+				<label class="form__label" for="">E-post</label>
+				<input class="form__field" type="email">
+			</div>
+			<label class="form__agree">
+				<input class="form__checkbox" type="checkbox">
+				<p class="form__agree-text">Jag vill lära mig mer om solceller och solenergi</p>
+			</label>
+			<p class="form__desc">Lär dig mer om solenergi, stödsystem, produktnyheter och andra erbjudanden</p>
+			<button class="form__submit" type="submit">Skicka</button>
 		</form>
 	</div>
-	<button class="modal__close" type="button" name="button"></button>
+	<button class="modal__close" type="button" name="button">
+		<img class="modal__icon" src="/wp-content/themes/yootheme-child/assets/images/cancel.svg" alt="cancel">
+	</button>
 </div>
 
 <?php

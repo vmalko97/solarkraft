@@ -15,6 +15,8 @@ $(document).ready(function() {
 	activePackage();
 	transferToTypes();
 	rangeCalc();
+	toggleModal();
+	openModalAfterLoadPage();
 
 	function activePackage () {
 		if (!$('.types__btn').length) return;
@@ -89,6 +91,28 @@ $(document).ready(function() {
 				break;
 			}
 		}
+	}
+
+	function toggleModal () {
+		$('.modal__close').click(() => {
+			$('.modal').removeClass('modal--active');
+			$('.modal-bg').removeClass('modal-bg--active');
+		});
+
+		$('#openModal').click(() => {
+			openModal();
+		});
+	}
+
+	function openModal () {
+		$('.modal').addClass('modal--active');
+		$('.modal-bg').addClass('modal-bg--active');
+	}
+
+	function openModalAfterLoadPage () {
+		setTimeout(() => {
+			openModal();
+		}, 2000);
 	}
 
 });
