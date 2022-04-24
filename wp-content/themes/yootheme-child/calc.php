@@ -48,14 +48,14 @@ if (function_exists('get_fields')) {
 	</div>
 </section>
 
-    <div class="address" id="map" style="display: none;"></div>
+<div class="map" id="map" style="display: none;"></div>
 
 <form id="solar_order" method="post">
     <input type="hidden" name="action" value="solar_order" />
     <input type="hidden" name="latitude">
     <input type="hidden" name="longitude">
     <input type="hidden" name="address">
-    <button type="submit" class="el-link uk-button uk-button-primary uk-button-large submit-order" style="display: none;">Order</button>
+    <button type="submit" class="el-link uk-button uk-button-primary uk-button-large submit-order" style="display: none;">Fortsätt</button>
 </form>
 
 <?php

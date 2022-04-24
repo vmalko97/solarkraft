@@ -144,6 +144,12 @@ body {
 	padding: 0px 15px;
 }
 
+.map {
+	width: 80vw;
+	height: 500px;
+	margin: 0 auto;
+}
+
 #address {
 	padding: 0;
 }
@@ -280,7 +286,6 @@ body {
 	text-align: center;
 	transition: padding 0.1s ease 0s, background-image 0.1s ease 0s, background 0.1s ease 0s, background-color 0.1s ease 0s, color 0.1s ease 0s;
 	letter-spacing: 0.0125em;
-
 	color: white;
 	background-color: rgb(30, 64, 180);
 	background-image: linear-gradient(to right, rgb(49, 86, 196), rgb(30, 64, 180));
