@@ -1,6 +1,8 @@
 $(document).ready(function() {
 	const paramsCalc = {
 		4500: {
+			title: 'Premium (11 panels) 5KW',
+			saving: 720,
 			info: {
 				name: 'Premium 5KW',
 				count: 11,
@@ -14,6 +16,8 @@ $(document).ready(function() {
 			}
 		},
 		7200: {
+			title: 'Premium (18 panels) 8KW',
+			saving: 1152,
 			info: {
 				name: 'Premium 8KW',
 				count: 18,
@@ -27,6 +31,8 @@ $(document).ready(function() {
 			}
 		},
 		9000: {
+			title: 'Premium(22 panels) 10KW',
+			saving: 1440,
 			info: {
 				name: 'Premium 10KW',
 				count: 22,
@@ -72,10 +78,9 @@ $(document).ready(function() {
 	function savingValue () {
 		if (!$('.types__btn--active').length) return;
 
-		const dataSaving = $('.types__btn--active').data('saving');
 		const dataValue = $('.types__btn--active').data('value');
 
-		$('.sticky-footer__saving').text(dataSaving);
+		setSavingAndTitle(dataValue);
 		breakPointsCalc(dataValue);
 		setInfo(dataValue);
 	}
@@ -86,17 +91,14 @@ $(document).ready(function() {
 		$('.types__btn').click(({ currentTarget }) => {
 			const dataName = $(currentTarget).data('name');
 			const dataValue = $(currentTarget).data('value');
-			const dataSaving = $(currentTarget).data('saving');
 
 			$('.types__btn').removeClass('types__btn--active');
-			$('.types__content').hide();
 			$('.types__img').fadeOut();
 
 			$(currentTarget).addClass('types__btn--active');
-			$(`.types__content[data-content=${dataName}]`).fadeIn();
 			$(`.types__img[data-name=${dataName}]`).fadeIn();
 
-			$('.sticky-footer__saving').text(dataSaving);
+			setSavingAndTitle(dataValue);
 			breakPointsCalc(dataValue);
 			setInfo(dataValue);
 		});
@@ -156,10 +158,22 @@ $(document).ready(function() {
 	function setInfo (value) {
 		for (let point in paramsCalc) {
 			if (value === parseInt(point)) {
-				console.log(paramsCalc[point].info);
 				for (let option in paramsCalc[point].info) {
 					$(`.instruction__name[data-name=${option}]`).text(paramsCalc[point].info[option]);
 				}
+
+				break;
+			}
+		}
+	}
+
+	function setSavingAndTitle (value) {
+		for (let point in paramsCalc) {
+			if (value === parseInt(point)) {
+				const { title, saving } = paramsCalc[point];
+				
+				$('.types__title-name').text(title);
+				$('.sticky-footer__saving').text(saving);
 
 				break;
 			}

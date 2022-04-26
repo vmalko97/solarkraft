@@ -912,16 +912,13 @@ body {
 	grid-template-rows: repeat(3, auto);
 }
 
-.types__content {
-	display: none;
-}
-
-.types__content:nth-child(2) {
-	display: block;
-}
-
 .types__details {
 	grid-area: 3 / 1 / 4;
+}
+
+.types__link {
+	color: #FAA048;
+	text-decoration: none;
 }
 
 .types__name {

@@ -174,41 +174,33 @@ get_header('calc');
 			<h2 class="types__title">Välj typ av solpanel</h2>
 			<div class="types__wrap">
 				<div class="types__btns">
-					<button class="types__btn types__btn--active" type="button" name="button" data-saving="720" data-value="4500" data-name="1">
+					<button class="types__btn types__btn--active" type="button" name="button" data-value="4500" data-name="1">
 						<span class="types__name">Premium (11 panels)</span>
 						<span class="types__value">5KW</span>
 					</button>
-					<button class="types__btn" type="button" name="button" data-saving="1152" data-value="7200" data-name="2">
+					<button class="types__btn" type="button" name="button" data-value="7200" data-name="2">
 						<span class="types__name">Premium (18 panels)</span>
 						<span class="types__value">8KW</span>
 					</button>
-					<button class="types__btn" type="button" name="button" data-saving="1440" data-value="9000" data-name="3">
+					<button class="types__btn" type="button" name="button" data-value="9000" data-name="3">
 						<span class="types__name">Premium(22 panels)</span>
 						<span class="types__value">10KW</span>
 					</button>
 				</div>
 				<div class="types__details">
 					<h3 class="types__subtitle">Standardpaneler</h3>
-					<div class="types__content types__content--active" data-content="1">
-						<p class="types__curr">
+					<div class="types__content">
+						<h4 class="types__curr">
 							<img class="warranty__icon" src="/wp-content/themes/yootheme-child/assets/images/check-blue.svg" alt="check" />
-							Premium (11 panels) 5KW
-						</p>
-						<p class="types__desc">Otovos standardpaneler är högkvalitativa solpaneler till ett rimligt pris, tillverkade av de största och högst ansedda tillverkarna på marknaden. Passar de som vill prisvärda kvalitativa solpaneler.</p>
-					</div>
-					<div class="types__content" data-content="2">
-						<p class="types__curr">
-							<img class="warranty__icon" src="/wp-content/themes/yootheme-child/assets/images/check-blue.svg" alt="check" />
-							Premium (18 panels) 8KW
-						</p>
-						<p class="types__desc">Otovos premiumpaneler är bland de bästa solpanelerna valda från de största tillverkarna. Premiumpaneler ger den bästa avvägningen mellan prestanda och pris, och är den panelen som de flesta av våra kunde väljer.</p>
-					</div>
-					<div class="types__content" data-content="3">
-						<p class="types__curr">
-							<img class="warranty__icon" src="/wp-content/themes/yootheme-child/assets/images/check-blue.svg" alt="check" />
-							Premium(22 panels) 10KW
-						</p>
-						<p class="types__desc">Med norskproducerade "wafers" har Otovos performancepanel världens lägsta koldioxidavtryck och den högsta möjliga prestandan på marknaden. När bara det allra bästa är bra nog.</p>
+							<span class="types__title-name">Premium (11 panels) 5KW</span>
+						</h4>
+						<div class="types__desc">
+							<p>Production will depend on the location of the property, orientation of the roof, the angle of the panels and any shading.</p>
+							<p>Assumed cost per KWH 1.92 sek and using all generated electric in the home or to charge an electric vehicle</p>
+							<p>Pris med skattereduktion för grön teknik</p>
+							<a class="types__link" href="https://www.mjobackssparbank.se/privat/privatlan-och-krediter/sollan.html" target="_blank">Example uses a loan from Mjoback Sparbanks Sollån 2.1% over 12 years LINK and included skattereduktion för grön teknik</a>
+							<p>Based on 25 years, 3% annual increase in energy cost. This is an example only.</p>
+						</div>
 					</div>
 				</div>
 				<picture class="types__picture">
