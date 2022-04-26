@@ -26,7 +26,7 @@ get_header('calc');
 
 		<section class="instruction">
 			<div class="instruction__item">
-				<img class="instruction__img" src="/wp-content/themes/yootheme-child/assets/images/panel.jpeg" alt="panel">
+				<img class="instruction__img" src="/wp-content/themes/yootheme-child/assets/images/buy.png" alt="buy">
 				<div class="instruction__info">
 					<h3 class="instruction__title">
 						<span class="instruction__name" data-name="name">Standard - 360W</span>
@@ -35,7 +35,7 @@ get_header('calc');
 				</div>
 			</div>
 			<div class="instruction__item">
-				<img class="instruction__img" src="/wp-content/themes/yootheme-child/assets/images/buy.jpeg" alt="buy">
+				<img class="instruction__img" src="/wp-content/themes/yootheme-child/assets/images/panel.png" alt="panel">
 				<div class="instruction__info">
 					<h3 class="instruction__title">Starter -
 						<span class="instruction__name" data-name="count">10</span>
@@ -44,7 +44,7 @@ get_header('calc');
 				</div>
 			</div>
 			<div class="instruction__item">
-				<img class="instruction__img" src="/wp-content/themes/yootheme-child/assets/images/house.jpeg" alt="house">
+				<img class="instruction__img" src="/wp-content/themes/yootheme-child/assets/images/house.png" alt="house">
 				<div class="instruction__info">
 					<h3 class="instruction__title">
 						<span class="instruction__name" data-name="kw">1000</span>
