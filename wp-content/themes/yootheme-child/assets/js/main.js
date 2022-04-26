@@ -6,7 +6,7 @@ $(document).ready(function() {
 			info: {
 				name: 'Premium 5KW',
 				count: 11,
-				kw: 5000
+				kw: 4500
 			},
 			grid: {
 				lifetime: ['240 000', '310 000'],
@@ -171,7 +171,7 @@ $(document).ready(function() {
 		for (let point in paramsCalc) {
 			if (value === parseInt(point)) {
 				const { title, saving } = paramsCalc[point];
-				
+
 				$('.types__title-name').text(title);
 				$('.sticky-footer__saving').text(saving);
 
