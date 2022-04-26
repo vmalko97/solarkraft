@@ -28,21 +28,27 @@ get_header('calc');
 			<div class="instruction__item">
 				<img class="instruction__img" src="/wp-content/themes/yootheme-child/assets/images/panel.png" alt="panel">
 				<div class="instruction__info">
-					<h3 class="instruction__title">Standard - 360W</h3>
+					<h3 class="instruction__title">
+						<span class="instruction__name" data-name="name">Standard - 360W</span>
+					</h3>
 					<span class="instruction__desc">Vald paneltyp</span>
 				</div>
 			</div>
 			<div class="instruction__item">
 				<img class="instruction__img" src="/wp-content/themes/yootheme-child/assets/images/buy.png" alt="buy">
 				<div class="instruction__info">
-					<h3 class="instruction__title">Starter - 10</h3>
+					<h3 class="instruction__title">Starter -
+						<span class="instruction__name" data-name="count">10</span>
+					</h3>
 					<span class="instruction__desc">Valt antal paneler</span>
 				</div>
 			</div>
 			<div class="instruction__item">
 				<img class="instruction__img" src="/wp-content/themes/yootheme-child/assets/images/house.png" alt="house">
 				<div class="instruction__info">
-					<h3 class="instruction__title">3 400 kWh</h3>
+					<h3 class="instruction__title">
+						<span class="instruction__name" data-name="kw">1000</span>
+					 kWh</h3>
 					<span class="instruction__desc">Uppskattad årsproduktion</span>
 				</div>
 			</div>
@@ -168,17 +174,17 @@ get_header('calc');
 			<h2 class="types__title">Välj typ av solpanel</h2>
 			<div class="types__wrap">
 				<div class="types__btns">
-					<button class="types__btn types__btn--active" type="button" name="button" data-value="720" data-name="1">
-						<span class="types__name">Premium</span>
-						<span class="types__value">5KW (11 panels)</span>
+					<button class="types__btn types__btn--active" type="button" name="button" data-saving="720" data-value="4500" data-name="1">
+						<span class="types__name">Premium (11 panels)</span>
+						<span class="types__value">5KW</span>
 					</button>
-					<button class="types__btn" type="button" name="button" data-value="1152" data-name="2">
-						<span class="types__name">Premium</span>
-						<span class="types__value">8KW (18 panels)</span>
+					<button class="types__btn" type="button" name="button" data-saving="1152" data-value="7200" data-name="2">
+						<span class="types__name">Premium (18 panels)</span>
+						<span class="types__value">8KW</span>
 					</button>
-					<button class="types__btn" type="button" name="button" data-value="1440" data-name="3">
-						<span class="types__name">Premium</span>
-						<span class="types__value">10KW (22 panels)</span>
+					<button class="types__btn" type="button" name="button" data-saving="1440" data-value="9000" data-name="3">
+						<span class="types__name">Premium(22 panels)</span>
+						<span class="types__value">10KW</span>
 					</button>
 				</div>
 				<div class="types__details">
@@ -186,21 +192,21 @@ get_header('calc');
 					<div class="types__content types__content--active" data-content="1">
 						<p class="types__curr">
 							<img class="warranty__icon" src="/wp-content/themes/yootheme-child/assets/images/check-blue.svg" alt="check" />
-							5KW (11 panels)
+							Premium (11 panels) 5KW
 						</p>
 						<p class="types__desc">Otovos standardpaneler är högkvalitativa solpaneler till ett rimligt pris, tillverkade av de största och högst ansedda tillverkarna på marknaden. Passar de som vill prisvärda kvalitativa solpaneler.</p>
 					</div>
 					<div class="types__content" data-content="2">
 						<p class="types__curr">
 							<img class="warranty__icon" src="/wp-content/themes/yootheme-child/assets/images/check-blue.svg" alt="check" />
-							8KW (18 panels)
+							Premium (18 panels) 8KW
 						</p>
 						<p class="types__desc">Otovos premiumpaneler är bland de bästa solpanelerna valda från de största tillverkarna. Premiumpaneler ger den bästa avvägningen mellan prestanda och pris, och är den panelen som de flesta av våra kunde väljer.</p>
 					</div>
 					<div class="types__content" data-content="3">
 						<p class="types__curr">
 							<img class="warranty__icon" src="/wp-content/themes/yootheme-child/assets/images/check-blue.svg" alt="check" />
-							10KW (22 panels)
+							Premium(22 panels) 10KW
 						</p>
 						<p class="types__desc">Med norskproducerade "wafers" har Otovos performancepanel världens lägsta koldioxidavtryck och den högsta möjliga prestandan på marknaden. När bara det allra bästa är bra nog.</p>
 					</div>
