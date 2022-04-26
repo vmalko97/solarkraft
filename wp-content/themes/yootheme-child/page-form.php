@@ -72,12 +72,12 @@ get_header('calc');
 						<img class="grid__icon" src="/wp-content/themes/yootheme-child/assets/images/grid-1.svg" alt="grid-1">
 						<div class="grid__name">
 							<span class="grid__value">
-								<small class="grid__count">200 000</small>
+								<small class="grid__count">240</small>
 								kr
 							</span>
 							<small class="grid__separ">-</small>
 							<span class="grid__value">
-								<small class="grid__count">270 000</small>
+								<small class="grid__count">310</small>
 								kr
 							</span>
 						</div>
@@ -87,14 +87,14 @@ get_header('calc');
 						<img class="grid__icon" src="/wp-content/themes/yootheme-child/assets/images/grid-2.svg" alt="grid-2">
 						<div class="grid__name">
 							<span class="grid__value">
-								<small class="grid__count">7 000</small>
+								<small class="grid__count">8640</small>
 								kr
 							</span>
-							<small class="grid__separ">-</small>
+							<!-- <small class="grid__separ">-</small>
 							<span class="grid__value">
 								<small class="grid__count">9 000</small>
 								kr
-							</span>
+							</span> -->
 						</div>
 						<span class="grid__desc">Genomsnittligt årligt sparande</span>
 					</div>
@@ -102,14 +102,14 @@ get_header('calc');
 						<img class="grid__icon" src="/wp-content/themes/yootheme-child/assets/images/grid-3.svg" alt="grid-3">
 						<div class="grid__name">
 							<span class="grid__value">
-								<small class="grid__count">400</small>
+								<small class="grid__count">720</small>
 								kr
 							</span>
-							<small class="grid__separ">-</small>
+							<!-- <small class="grid__separ">-</small>
 							<span class="grid__value">
 								<small class="grid__count">600</small>
 								kr
-							</span>
+							</span> -->
 						</div>
 						<span class="grid__desc">Besparing per månad</span>
 					</div>
@@ -117,11 +117,10 @@ get_header('calc');
 						<img class="grid__icon" src="/wp-content/themes/yootheme-child/assets/images/grid-4.svg" alt="grid-4">
 						<div class="grid__name">
 							<span class="grid__value">
-								<small class="grid__count">1367</small>
-								kr
+								<small class="grid__count">5KW (11 panels)</small>
 							</span>
 						</div>
-						<span class="grid__desc">Besparad CO2/år</span>
+						<span class="grid__desc">Panelpaket</span>
 					</div>
 				</div>
 			</div>
@@ -169,47 +168,47 @@ get_header('calc');
 			<h2 class="types__title">Välj typ av solpanel</h2>
 			<div class="types__wrap">
 				<div class="types__btns">
-					<button class="types__btn types__btn--active" type="button" name="button" data-value="360" data-name="standart">
-						<span class="types__name">Standard</span>
-						<span class="types__value">360W</span>
-					</button>
-					<button class="types__btn" type="button" name="button" data-value="390" data-name="premium">
+					<button class="types__btn types__btn--active" type="button" name="button" data-value="720" data-name="1">
 						<span class="types__name">Premium</span>
-						<span class="types__value">390W</span>
+						<span class="types__value">5KW (11 panels)</span>
 					</button>
-					<button class="types__btn" type="button" name="button" data-value="400" data-name="performance">
-						<span class="types__name">Performance</span>
-						<span class="types__value">400KW</span>
+					<button class="types__btn" type="button" name="button" data-value="1152" data-name="2">
+						<span class="types__name">Premium</span>
+						<span class="types__value">8KW (18 panels)</span>
+					</button>
+					<button class="types__btn" type="button" name="button" data-value="1440" data-name="3">
+						<span class="types__name">Premium</span>
+						<span class="types__value">10KW (22 panels)</span>
 					</button>
 				</div>
 				<div class="types__details">
 					<h3 class="types__subtitle">Standardpaneler</h3>
-					<div class="types__content types__content--active" data-content="standart">
+					<div class="types__content types__content--active" data-content="1">
 						<p class="types__curr">
 							<img class="warranty__icon" src="/wp-content/themes/yootheme-child/assets/images/check-blue.svg" alt="check" />
-							365 watt per panel
+							5KW (11 panels)
 						</p>
 						<p class="types__desc">Otovos standardpaneler är högkvalitativa solpaneler till ett rimligt pris, tillverkade av de största och högst ansedda tillverkarna på marknaden. Passar de som vill prisvärda kvalitativa solpaneler.</p>
 					</div>
-					<div class="types__content" data-content="premium">
+					<div class="types__content" data-content="2">
 						<p class="types__curr">
 							<img class="warranty__icon" src="/wp-content/themes/yootheme-child/assets/images/check-blue.svg" alt="check" />
-							390 watt per panel
+							8KW (18 panels)
 						</p>
 						<p class="types__desc">Otovos premiumpaneler är bland de bästa solpanelerna valda från de största tillverkarna. Premiumpaneler ger den bästa avvägningen mellan prestanda och pris, och är den panelen som de flesta av våra kunde väljer.</p>
 					</div>
-					<div class="types__content" data-content="performance">
+					<div class="types__content" data-content="3">
 						<p class="types__curr">
 							<img class="warranty__icon" src="/wp-content/themes/yootheme-child/assets/images/check-blue.svg" alt="check" />
-							400 watt per panel
+							10KW (22 panels)
 						</p>
 						<p class="types__desc">Med norskproducerade "wafers" har Otovos performancepanel världens lägsta koldioxidavtryck och den högsta möjliga prestandan på marknaden. När bara det allra bästa är bra nog.</p>
 					</div>
 				</div>
 				<picture class="types__picture">
-					<img class="types__img" data-name="standart" src="/wp-content/themes/yootheme-child/assets/images/standart.png" alt="standart panel">
-					<img class="types__img" data-name="premium" src="/wp-content/themes/yootheme-child/assets/images/premium.png" alt="premium panel">
-					<img class="types__img" data-name="performance" src="/wp-content/themes/yootheme-child/assets/images/performance.png" alt="performance panel">
+					<img class="types__img" data-name="1" src="/wp-content/themes/yootheme-child/assets/images/standart.png" alt="standart panel">
+					<img class="types__img" data-name="2" src="/wp-content/themes/yootheme-child/assets/images/premium.png" alt="premium panel">
+					<img class="types__img" data-name="3" src="/wp-content/themes/yootheme-child/assets/images/performance.png" alt="performance panel">
 				</picture>
 			</div>
 		</section>
@@ -219,7 +218,7 @@ get_header('calc');
 				<div class="sticky-footer__data">
 					<div class="sticky-footer__block">
 						<h4 class="sticky-footer__title">Pris</h4>
-						<span class="sticky-footer__count">525 kr/mnd</span>
+						<span class="sticky-footer__count"><small class="sticky-footer__saving">525</small> kr/mnd</span>
 					</div>
 					<div class="sticky-footer__block">
 						<h4 class="sticky-footer__title">Uppskattad besparing</h4>

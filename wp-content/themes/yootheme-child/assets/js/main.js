@@ -6,8 +6,11 @@ $(document).ready(function() {
 	toggleModal();
 	openModalAfterLoadPage();
 	countryCode();
+	savingValue();
 
 	function getCoords () {
+		if (!$('#solar_order').length) return;
+
 		$('#solar_order').submit((e) => {
 			e.preventDefault();
 
@@ -24,11 +27,20 @@ $(document).ready(function() {
 		});
 	}
 
+	function savingValue () {
+		if (!$('.types__btn--active').length) return;
+
+		const dataValue = $('.types__btn--active').data('value');
+
+		$('.sticky-footer__saving').text(dataValue);
+	}
+
 	function activePackage () {
 		if (!$('.types__btn').length) return;
 
 		$('.types__btn').click(({ currentTarget }) => {
 			const dataName = $(currentTarget).data('name');
+			const dataValue = $(currentTarget).data('value');
 
 			$('.types__btn').removeClass('types__btn--active');
 			$('.types__content').hide();
@@ -37,6 +49,8 @@ $(document).ready(function() {
 			$(currentTarget).addClass('types__btn--active');
 			$(`.types__content[data-content=${dataName}]`).fadeIn();
 			$(`.types__img[data-name=${dataName}]`).fadeIn();
+
+			$('.sticky-footer__saving').text(dataValue);
 		});
 	}
 
@@ -51,6 +65,8 @@ $(document).ready(function() {
 	}
 
 	function rangeCalc () {
+		if (!$('#amount').length) return;
+
 		const min = $('#amount').data('min');
 		const max = $('#amount').data('max');
 
@@ -64,7 +80,7 @@ $(document).ready(function() {
 				breakPointsCalc(value);
 			}
 		});
-		$( "#amount" ).val($("#slider").slider("value"));
+		$("#amount").val($("#slider").slider("value"));
 		$('.calc__value--min').text(`${min} kr`);
 		$('.calc__value--max').text(`${max} kr`);
 	}
@@ -100,6 +116,8 @@ $(document).ready(function() {
 	}
 
 	function toggleModal () {
+		if (!$('.modal').length) return;
+
 		$('.modal__close').click(() => {
 			$('.modal').removeClass('modal--active');
 			$('.modal-bg').removeClass('modal-bg--active');
@@ -111,6 +129,8 @@ $(document).ready(function() {
 	}
 
 	function openModal () {
+		if (!$('.modal').length) return;
+
 		$('.modal').addClass('modal--active');
 		$('.modal-bg').addClass('modal-bg--active');
 	}
@@ -143,5 +163,4 @@ $(document).ready(function() {
 			}
 		});
 	}
-
 });
