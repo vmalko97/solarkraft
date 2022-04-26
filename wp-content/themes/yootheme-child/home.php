@@ -13,9 +13,6 @@ get_header();
 
     <p>Driv ditt hem med solpaneler - smart & enkelt</p>
 
-
-    <p><a href="#">Få Offert</a></p>
-
 	<div class="address">
 		<form class="address__form">
 			<label for="address__input-wrap">

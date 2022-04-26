@@ -152,12 +152,17 @@ body {
 }
 
 .map-form {
+	display: none;
+}
+
+.map-form--active {
 	display: -webkit-flex;
 	display: -ms-flex;
 	display: flex;
 }
 
 .map-form__btn {
+	display: inline-flex;
 	border-radius: 40px;
 	min-width: 160px;
 	min-height: 48px;
@@ -167,23 +172,25 @@ body {
 	font-size: 16px;
 	font-weight: 600;
 	margin: 0 auto;
-	display: inline-flex;
 	-webkit-box-align: center;
 	align-items: center;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
 	text-align: center;
 	transition: padding 0.1s ease 0s, background-image 0.1s ease 0s, background 0.1s ease 0s, background-color 0.1s ease 0s, color 0.1s ease 0s;
 	letter-spacing: 0.0125em;
 	position: relative;
 	color: white;
-	background-color: rgb(30, 64, 180);
-	background-image: linear-gradient(to right, rgb(49, 86, 196), rgb(30, 64, 180));
-	-webkit-box-pack: justify;
-	justify-content: space-between;
+	background-color: #FAA048;
 }
 
 .map-form__icon {
 	width: 20px;
 	height: 20px;
+}
+
+.wrap {
+	background: #FCEFDE;
 }
 
 #address {
@@ -323,8 +330,7 @@ body {
 	transition: padding 0.1s ease 0s, background-image 0.1s ease 0s, background 0.1s ease 0s, background-color 0.1s ease 0s, color 0.1s ease 0s;
 	letter-spacing: 0.0125em;
 	color: white;
-	background-color: rgb(30, 64, 180);
-	background-image: linear-gradient(to right, rgb(49, 86, 196), rgb(30, 64, 180));
+	background-color: #FAA048;
 	width: 48px;
 	height: 48px;
 	-webkit-box-pack: center;
@@ -505,7 +511,8 @@ body {
 
 .calc {
 	padding: 0 25px;
-	background-color: rgb(245, 246, 255);
+	border-radius: 10px;
+	background-color: #FCE0BD;
 }
 
 .calc__title {
@@ -557,7 +564,7 @@ body {
 	height: 24px;
 	top: -7px;
 	border-radius: 50%;
-	background: rgb(30, 64, 180);
+	background: #FAA048;
 	box-shadow: inset 0 0 0 2px #eee;
 }
 
@@ -584,6 +591,10 @@ body {
 .calc__values {
 	display: flex;
 	justify-content: space-between;
+}
+
+.calc__switch {
+	display: none; /* delete later */
 }
 
 .calc__switch input {
@@ -639,7 +650,7 @@ body {
 }
 
 .grid__item {
-	background-color: rgb(237, 239, 255);
+	background-color: #fff;
 	border-radius: 5px;
 	display: flex;
 	-webkit-flex-flow: column;
@@ -892,7 +903,7 @@ body {
 }
 
 .types__btn--active {
-	border-color: rgb(30, 64, 180);
+	border-color: #FAA048;
 }
 
 .types__wrap {
@@ -1038,8 +1049,7 @@ body {
 	text-align: center;
 	transition: padding 0.1s ease 0s, background-image 0.1s ease 0s, background 0.1s ease 0s, background-color 0.1s ease 0s, color 0.1s ease 0s;
 	position: relative;
-	background-color: rgb(30, 64, 180);
-	background-image: linear-gradient(to right, rgb(49, 86, 196), rgb(30, 64, 180));
+	background-color: #FAA048;
 	-webkit-box-pack: center;
 	justify-content: center;
 }
@@ -1070,7 +1080,7 @@ body {
 	max-height: 90vh;
 	width: 0;
 	height: 0;
-	overflow-y: auto;
+	overflow-y: scroll;
 	border-radius: 8px;
 	background-color: white;
 	box-shadow: 0 8px 34px 0 rgb(0 0 0 / 30%);
@@ -1183,7 +1193,7 @@ body {
 
 .form__field:focus {
 	border-radius: 25px;
-	box-shadow: rgb(30 64 180) 0 0 0 2px;
+	box-shadow: #FAA048 0 0 0 2px;
 }
 
 .form__checkbox {
@@ -1239,7 +1249,7 @@ body {
 }
 
 .form__agree input:checked + .form__agree-text:before {
-	background: rgb(17, 239, 161);
+	background: #FAA048;
 }
 
 .form__agree input:checked + .form__agree-text:after {
@@ -1273,8 +1283,7 @@ body {
 	letter-spacing: 0.0125em;
 	position: relative;
 	color: white;
-	background-color: rgb(30, 64, 180);
-	background-image: linear-gradient(to right, rgb(49, 86, 196), rgb(30, 64, 180));
+	background-color: #FAA048;
 	-webkit-box-pack: center;
 	justify-content: center;
 	width: 100%;

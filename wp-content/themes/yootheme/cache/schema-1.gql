@@ -139,6 +139,7 @@ type Query {
   search: Search @call(func: "YOOtheme\\Builder\\Wordpress\\Source\\Type\\SearchQueryType::resolve")
   posts: PostsQuery @call(func: "YOOtheme\\Builder\\Wordpress\\Source\\Type\\PostQueryType::resolve")
   pages: PagesQuery @call(func: "YOOtheme\\Builder\\Wordpress\\Source\\Type\\PostQueryType::resolve")
+  solarOrders: SolarOrdersQuery @call(func: "YOOtheme\\Builder\\Wordpress\\Source\\Type\\PostQueryType::resolve")
   categories: CategoriesQuery @call(func: "YOOtheme\\Builder\\Wordpress\\Source\\Type\\TaxonomyQueryType::resolve")
   tags: TagsQuery @call(func: "YOOtheme\\Builder\\Wordpress\\Source\\Type\\TaxonomyQueryType::resolve")
   postFlags: PostFlagsQuery @call(func: "YOOtheme\\Builder\\Wordpress\\Source\\Type\\TaxonomyQueryType::resolve")
@@ -159,6 +160,23 @@ type Site {
   user: User
   is_guest: Int
   item_count: Int
+}
+
+type SolarOrder {
+  title: String @call(func: "YOOtheme\\Builder\\Wordpress\\Source\\Type\\PostType::title")
+  teaser(show_excerpt: Boolean): String @call(func: "YOOtheme\\Builder\\Wordpress\\Source\\Type\\PostType::teaser")
+  date: String @call(func: "YOOtheme\\Builder\\Wordpress\\Source\\Type\\PostType::date")
+  modified: String @call(func: "YOOtheme\\Builder\\Wordpress\\Source\\Type\\PostType::modified")
+  metaString(format: String, separator: String, link_style: String, show_publish_date: Boolean, show_author: Boolean, show_comments: Boolean, show_taxonomy: String, date_format: String): String @call(func: "YOOtheme\\Builder\\Wordpress\\Source\\Type\\PostType::metaString")
+  link: String @call(func: "YOOtheme\\Builder\\Wordpress\\Source\\Type\\PostType::link")
+}
+
+type SolarOrdersQuery {
+  singleSolarOrder: SolarOrder @call(func: "YOOtheme\\Builder\\Wordpress\\Source\\Type\\SinglePostQueryType::resolve")
+  singlePreviousSolarOrder: SolarOrder @call(func: "YOOtheme\\Builder\\Wordpress\\Source\\Type\\SinglePostQueryType::resolvePreviousPost")
+  singleNextSolarOrder: SolarOrder @call(func: "YOOtheme\\Builder\\Wordpress\\Source\\Type\\SinglePostQueryType::resolveNextPost")
+  customSolarOrder(id: Int, terms: [Int], users: [Int], users_operator: String, offset: Int, order: String, order_direction: String, order_alphanum: Boolean): SolarOrder @call(func: "YOOtheme\\Builder\\Wordpress\\Source\\Type\\CustomPostQueryType::resolvePost", args: "{\"post_type\":\"solar_order\"}")
+  customSolarOrders(terms: [Int], users: [Int], users_operator: String, offset: Int, limit: Int, order: String, order_direction: String, order_alphanum: Boolean): [SolarOrder] @call(func: "YOOtheme\\Builder\\Wordpress\\Source\\Type\\CustomPostQueryType::resolvePosts", args: "{\"post_type\":\"solar_order\"}")
 }
 
 type TagsQuery {

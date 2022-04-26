@@ -76,6 +76,6 @@ $(document).ready(function () {
             });
         $('.address-form').hide();
         $('#map').show();
-        $('.submit-order').show();
+        $('.map-form').addClass('map-form--active');
     });
 });

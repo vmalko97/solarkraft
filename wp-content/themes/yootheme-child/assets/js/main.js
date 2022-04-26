@@ -1,22 +1,28 @@
 $(document).ready(function() {
-
-		$('#solar_order').submit(function(e){
-				var data = $(this).serialize();
-				e.preventDefault();
-				$.post(
-						wp_ajax.url,
-						data,
-						function (response) {
-								console.log(response);
-								$('#map').hide();
-						})
-		});
-
+	getCoords ();
 	activePackage();
 	transferToTypes();
 	rangeCalc();
 	toggleModal();
 	openModalAfterLoadPage();
+	countryCode();
+
+	function getCoords () {
+		$('#solar_order').submit((e) => {
+			e.preventDefault();
+
+			const data = $(this).serialize();
+
+			$.post(
+				wp_ajax.url,
+				data,
+				(response) => {
+					$('#map').hide();
+					$('.map-form').removeClass('map-form--active');
+				}
+			);
+		});
+	}
 
 	function activePackage () {
 		if (!$('.types__btn').length) return;
@@ -113,6 +119,37 @@ $(document).ready(function() {
 		setTimeout(() => {
 			openModal();
 		}, 2000);
+	}
+
+	function countryCode () {
+		// ne po
+		$.get("https://ipinfo.io", (response) => {
+			const countryUser = response.country.toLowerCase();
+
+			console.log(countryUser);
+
+			return;
+
+			$.ajax({
+				dataType: 'json',
+				url: "./js/data.json",
+				type: 'get',
+				async: false,
+				success: function (data) {
+					[...data].forEach((item) => {
+						if (response.country == item.code) {
+							$("#country_ip").text(item.countryName);
+						}
+					});
+				}
+			});
+
+			let registerPhone = $("#registr-phone");
+
+			if (registerPhone.length) {
+				registerPhone.CcPicker({"countryCode":contryUser});
+			}
+		}, "jsonp");
 	}
 
 });
