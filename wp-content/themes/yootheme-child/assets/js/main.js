@@ -77,7 +77,7 @@ $(document).ready(function() {
 			step: 50,
 			slide: (event, { value }) => {
 				$("#amount").val(value);
-				breakPointsCalc(value);
+				// breakPointsCalc(value);
 			}
 		});
 		$("#amount").val($("#slider").slider("value"));
@@ -88,28 +88,37 @@ $(document).ready(function() {
 	function breakPointsCalc (value) {
 		const paramsCalc = {
 			4500: {
-				bill: 8640,
+				lifetime: ['240', '310'],
+				annual: 8640,
 				month: 720,
-				cash: 90.000,
-				finance: 708
+				size: '5KW (11 panels)'
 			},
 			7200: {
-				bill: 13824,
+				lifetime: ['420', '500'],
+				annual: 13824,
 				month: 1152,
-				cash: 130.000,
-				finance: 1022
+				size: '8KW (18 panels)'
 			},
 			9000: {
-				bill: 17280,
+				lifetime: ['520', '600'],
+				annual: 17280,
 				month: 1440,
-				cash: 145.000,
-				finance: 1140
+				size: '10KW (22 panels)'
 			}
 		}
 
 		for (let point in paramsCalc) {
 			if (value <= point) {
-				console.log(paramsCalc[point]);
+				for (let option in paramsCalc[point]) {
+					if (option === 'lifetime') {
+						[from, to] = paramsCalc[point][option];
+
+						$(`.grid__name[data-name=${option}]`).find('.grid__count--from').text(from);
+						$(`.grid__name[data-name=${option}]`).find('.grid__count--to').text(to);
+					} else {
+						$(`.grid__name[data-name=${option}]`).find('.grid__count').text(paramsCalc[point][option]);
+					}
+				}
 				break;
 			}
 		}

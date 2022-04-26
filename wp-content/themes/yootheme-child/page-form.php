@@ -70,14 +70,14 @@ get_header('calc');
 				<div class="grid">
 					<div class="grid__item">
 						<img class="grid__icon" src="/wp-content/themes/yootheme-child/assets/images/grid-1.svg" alt="grid-1">
-						<div class="grid__name">
+						<div class="grid__name" data-name='lifetime'>
 							<span class="grid__value">
-								<small class="grid__count">240</small>
+								<small class="grid__count grid__count--from">240 000</small>
 								kr
 							</span>
 							<small class="grid__separ">-</small>
 							<span class="grid__value">
-								<small class="grid__count">310</small>
+								<small class="grid__count grid__count--to">310 000</small>
 								kr
 							</span>
 						</div>
@@ -85,7 +85,7 @@ get_header('calc');
 					</div>
 					<div class="grid__item">
 						<img class="grid__icon" src="/wp-content/themes/yootheme-child/assets/images/grid-2.svg" alt="grid-2">
-						<div class="grid__name">
+						<div class="grid__name" data-name='annual'>
 							<span class="grid__value">
 								<small class="grid__count">8640</small>
 								kr
@@ -100,7 +100,7 @@ get_header('calc');
 					</div>
 					<div class="grid__item">
 						<img class="grid__icon" src="/wp-content/themes/yootheme-child/assets/images/grid-3.svg" alt="grid-3">
-						<div class="grid__name">
+						<div class="grid__name" data-name='month'>
 							<span class="grid__value">
 								<small class="grid__count">720</small>
 								kr
@@ -115,7 +115,7 @@ get_header('calc');
 					</div>
 					<div class="grid__item">
 						<img class="grid__icon" src="/wp-content/themes/yootheme-child/assets/images/grid-4.svg" alt="grid-4">
-						<div class="grid__name">
+						<div class="grid__name" data-name='size'>
 							<span class="grid__value">
 								<small class="grid__count">5KW (11 panels)</small>
 							</span>
