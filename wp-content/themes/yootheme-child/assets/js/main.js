@@ -1,51 +1,5 @@
 $(document).ready(function() {
-	const paramsCalc = {
-		4500: {
-			title: 'Premium (11 panels) 5KW',
-			saving: 720,
-			info: {
-				name: 'Premium 5KW',
-				count: 11,
-				kw: 4500
-			},
-			grid: {
-				lifetime: ['240 000', '310 000'],
-				annual: 8640,
-				month: 720,
-				size: '5KW (11 panels)'
-			}
-		},
-		7200: {
-			title: 'Premium (18 panels) 8KW',
-			saving: 1152,
-			info: {
-				name: 'Premium 8KW',
-				count: 18,
-				kw: 8000
-			},
-			grid: {
-				lifetime: ['420 000', '500 000'],
-				annual: 13824,
-				month: 1152,
-				size: '8KW (18 panels)'
-			}
-		},
-		9000: {
-			title: 'Premium(22 panels) 10KW',
-			saving: 1440,
-			info: {
-				name: 'Premium 10KW',
-				count: 22,
-				kw: 10000
-			},
-			grid: {
-				lifetime: ['520 000', '600 000'],
-				annual: 17280,
-				month: 1440,
-				size: '10KW (22 panels)'
-			}
-		}
-	}
+
 
 	getCoords ();
 	activePackage();

@@ -3,9 +3,34 @@
 Template Name: Form
  */
 
+if(isset($_POST['address'])){
 get_header('calc');
 
+$fields = get_fields();
+
+$paramsCalc = [];
+
+foreach ($fields['solars'] as $solar){
+    $paramsCalc[$solar['annual_production']] = [
+            'title' => $solar['title'],
+            'saving' => $solar['projected_monthly_saving'],
+            'info' => [
+                  'name' => $solar['info']['name'],
+                  'count' => $solar['info']['panels_count'],
+                  'kw' => $solar['info']['power'],
+            ],
+            'grid' => [
+                    'lifetime' => [ $solar['grid']['lifetime_estimated_return']['min'], $solar['grid']['lifetime_estimated_return']['max'] ],
+                    'annual' => $solar['grid']['projected_annual_saving_on_electric_bill'],
+                    'month' => $solar['grid']['projected_monthly_saving'],
+                    'size' => $solar['grid']['size']
+            ],
+    ];
+}
+
 ?>
+    <script>const paramsCalc = <?=json_encode($paramsCalc);?>; </script>
+
 <div class="wrap">
 	<div class="container">
 		<section class="info">
@@ -16,50 +41,50 @@ get_header('calc');
 						<circle cx="12" cy="10" r="3"></circle>
 					</svg>
 				</figure>
-				<small class="info__address-name">Agda Helins Väg 10, 43351 Öjersjö</small>
+				<small class="info__address-name"><?=$_POST['address'];?></small>
 			</address>
 			<div class="info__title-block">
-				<h1 class="info__title">Här är ditt kostnadsförslag för solpaneler</h1>
+				<h1 class="info__title"><?=$fields['title']; ?></h1>
 				<p class="info__subtitle">Våra robotar har beräknat dina solpanelsalternativ och gjort det här paketet personligt för dig. <span class="info__subtitle-second"> Skrolla ned eller <button class="info__btn-calc" type="button"> klicka här</button> för att sätta samman ditt paket.</span></p>
 			</div>
 		</section>
 
 		<section class="instruction">
 			<div class="instruction__item">
-				<img class="instruction__img" src="/wp-content/themes/yootheme-child/assets/images/buy.png" alt="buy">
+				<img class="instruction__img" src="<?=$fields['top_first_icon']; ?>" alt="buy">
 				<div class="instruction__info">
 					<h3 class="instruction__title">
 						<span class="instruction__name" data-name="name">Standard - 360W</span>
 					</h3>
-					<span class="instruction__desc">Vald paneltyp</span>
+					<span class="instruction__desc"><?=$fields['first_icon_decription']; ?></span>
 				</div>
 			</div>
 			<div class="instruction__item">
-				<img class="instruction__img" src="/wp-content/themes/yootheme-child/assets/images/panel.png" alt="panel">
+				<img class="instruction__img" src="<?=$fields['top_second_icon']; ?>" alt="panel">
 				<div class="instruction__info">
 					<h3 class="instruction__title">Starter -
 						<span class="instruction__name" data-name="count">10</span>
 					</h3>
-					<span class="instruction__desc">Valt antal paneler</span>
+					<span class="instruction__desc"><?=$fields['second_icon_description']; ?></span>
 				</div>
 			</div>
 			<div class="instruction__item">
-				<img class="instruction__img" src="/wp-content/themes/yootheme-child/assets/images/house.png" alt="house">
+				<img class="instruction__img" src="<?=$fields['top_third_icon']; ?>" alt="house">
 				<div class="instruction__info">
 					<h3 class="instruction__title">
 						<span class="instruction__name" data-name="kw">1000</span>
 					 kWh</h3>
-					<span class="instruction__desc">Uppskattad årsproduktion</span>
+					<span class="instruction__desc"><?=$fields['third_icon_description']; ?></span>
 				</div>
 			</div>
 		</section>
 
 		<section class="calc">
-			<h2 class="calc__title">Hur mycket pengar kommer jag att spara?</h2>
+			<h2 class="calc__title"><?=$fields['calc_title']; ?></h2>
 			<div class="calc__section">
 				<div class="calc__control">
-					<h3 class="calc__subtitle">Vad är din månadsräkning?</h3>
-					<p class="calc__desc">Din månadsräkning används för att beräkna mer exakta besparingar</p>
+					<h3 class="calc__subtitle"><?=$fields['calc_subtitle']; ?></h3>
+					<p class="calc__desc"><?=$fields['calc_description']; ?></p>
 					<input type="text" class="calc__num" value="2000" id="amount" data-min="1000" data-max="9000" readonly>
 					<div class="calc__range">
 						<div class="calc__range-line" id="slider"></div>
@@ -75,7 +100,7 @@ get_header('calc');
 				</div>
 				<div class="grid">
 					<div class="grid__item">
-						<img class="grid__icon" src="/wp-content/themes/yootheme-child/assets/images/grid-1.svg" alt="grid-1">
+						<img class="grid__icon" src="<?=$fields['grid_first_item_icon']; ?>" alt="grid-1">
 						<div class="grid__name" data-name='lifetime'>
 							<span class="grid__value">
 								<small class="grid__count grid__count--from">240 000</small>
@@ -87,10 +112,10 @@ get_header('calc');
 								kr
 							</span>
 						</div>
-						<span class="grid__desc">Total besparing</span>
+						<span class="grid__desc"><?=$fields['grid_first_item_description']; ?></span>
 					</div>
 					<div class="grid__item">
-						<img class="grid__icon" src="/wp-content/themes/yootheme-child/assets/images/grid-2.svg" alt="grid-2">
+						<img class="grid__icon" src="<?=$fields['grid_second_item_icon']; ?>" alt="grid-2">
 						<div class="grid__name" data-name='annual'>
 							<span class="grid__value">
 								<small class="grid__count">8640</small>
@@ -102,10 +127,10 @@ get_header('calc');
 								kr
 							</span> -->
 						</div>
-						<span class="grid__desc">Genomsnittligt årligt sparande</span>
+						<span class="grid__desc"><?=$fields['grid_second_item_description']; ?></span>
 					</div>
 					<div class="grid__item">
-						<img class="grid__icon" src="/wp-content/themes/yootheme-child/assets/images/grid-3.svg" alt="grid-3">
+						<img class="grid__icon" src="<?=$fields['grid_third_item_icon']; ?>" alt="grid-3">
 						<div class="grid__name" data-name='month'>
 							<span class="grid__value">
 								<small class="grid__count">720</small>
@@ -117,16 +142,16 @@ get_header('calc');
 								kr
 							</span> -->
 						</div>
-						<span class="grid__desc">Besparing per månad</span>
+						<span class="grid__desc"><?=$fields['grid_third_item_description']; ?></span>
 					</div>
 					<div class="grid__item">
-						<img class="grid__icon" src="/wp-content/themes/yootheme-child/assets/images/grid-4.svg" alt="grid-4">
+						<img class="grid__icon" src="<?=$fields['grid_fourth_item_icon']; ?>" alt="grid-4">
 						<div class="grid__name" data-name='size'>
 							<span class="grid__value">
 								<small class="grid__count">5KW (11 panels)</small>
 							</span>
 						</div>
-						<span class="grid__desc">Panelpaket</span>
+						<span class="grid__desc"><?=$fields['grid_fourth_item_description']; ?></span>
 					</div>
 				</div>
 			</div>
@@ -268,3 +293,4 @@ get_header('calc');
 <?php
 
 get_footer('calc');
+}
