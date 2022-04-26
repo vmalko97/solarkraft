@@ -1162,6 +1162,51 @@ body {
 	z-index: 12;
 }
 
+.form__wrap {
+	position: relative;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+}
+
+.cc-picker {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	font-family: Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	height: 100%;
+	padding: 12px 25px;
+	color: rgb(37, 48, 74);
+	letter-spacing: 0.0125em;
+	appearance: none;
+}
+
+.cc-picker-flag {
+	-webkit-flex: 0 0 auto;
+	-ms-flex: 0 0 auto;
+	flex: 0 0 auto;
+	width: 16px;
+	height: 11px;
+	margin-right: 7px;
+	display: inline-block;
+	background: url(./assets/images/flags.png);
+	position: relative;
+	top: 1px;
+}
+
+.cc-picker-code-select-enabled::after {
+	display: none;
+}
+
+.cc-picker-code {
+	line-height: 17px;
+}
+
+.form__wrap .form__field {
+	padding-left: 85px;
+}
+
 .form__field-wrap {
 	margin-bottom: 15px;
 }
@@ -1512,7 +1557,8 @@ body {
 	.form__agree-text,
 	.form__field,
 	.modal__subtext,
-	.modal__text {
+	.modal__text,
+	.cc-picker {
 		font-size: 16px;
 	}
 

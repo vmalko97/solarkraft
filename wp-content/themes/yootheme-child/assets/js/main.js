@@ -122,34 +122,26 @@ $(document).ready(function() {
 	}
 
 	function countryCode () {
-		// ne po
-		$.get("https://ipinfo.io", (response) => {
-			const countryUser = response.country.toLowerCase();
+		new Promise((resolve, reject) => {
+			$.get("https://ipinfo.io", ({ country }) => {
+				resolve(country.toLowerCase());
+			}, "jsonp");
+		})
+		.then((country) => {
+			const countries = ['se', 'no', 'fi', 'uk'];
+			let contryUser;
 
-			console.log(countryUser);
-
-			return;
-
-			$.ajax({
-				dataType: 'json',
-				url: "./js/data.json",
-				type: 'get',
-				async: false,
-				success: function (data) {
-					[...data].forEach((item) => {
-						if (response.country == item.code) {
-							$("#country_ip").text(item.countryName);
-						}
-					});
-				}
-			});
-
-			let registerPhone = $("#registr-phone");
-
-			if (registerPhone.length) {
-				registerPhone.CcPicker({"countryCode":contryUser});
+			for (let countryItem of countries) {
+				contryUser = countryItem === country ? countryItem : 'se';
 			}
-		}, "jsonp");
+
+			if ($('#phoneField').length) {
+				$('#phoneField').CcPicker({
+					dataUrl: './wp-content/themes/yootheme-child/assets/js/data.json',
+					countryCode: contryUser
+				});
+			}
+		});
 	}
 
 });

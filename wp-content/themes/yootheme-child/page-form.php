@@ -242,16 +242,18 @@ get_header('calc');
 		<p class="modal__text">Lämna dina uppgifter, så ringer vi dig för att diskutera detaljerna i ditt erbjudande och svara på alla dina frågor.</p>
 		<form class="form" action="index.html" method="post">
 			<div class="form__field-wrap">
-				<label class="form__label" for="">Förnamn och efternamn</label>
-				<input class="form__field" type="text">
+				<label class="form__label" for="nameField">Förnamn och efternamn</label>
+				<input class="form__field" id="nameField" type="text" name="name">
 			</div>
 			<div class="form__field-wrap">
-				<label class="form__label" for="">Telefon</label>
-				<input class="form__field" type="text">
+				<label class="form__label" for="phoneField">Telefon</label>
+				<div class="form__wrap">
+					<input class="form__field" id="phoneField" type="text" maxlength="11" name="phoneField">
+				</div>
 			</div>
 			<div class="form__field-wrap">
-				<label class="form__label" for="">E-post</label>
-				<input class="form__field" type="email">
+				<label class="form__label" for="emailField">E-post</label>
+				<input class="form__field" id="emailField" type="email" name="email">
 			</div>
 			<label class="form__agree">
 				<input class="form__checkbox" type="checkbox">
