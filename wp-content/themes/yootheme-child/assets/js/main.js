@@ -179,7 +179,16 @@ $(document).ready(function() {
 			console.log(country);
 
 			for (let countryItem of countries) {
-				contryUser = countryItem === country ? country : 'se';
+				if (countryItem === country) {
+					contryUser = country;
+				} else if (countryItem === 'gb') {
+					contryUser = 'uk';
+				} else {
+					contryUser = 'se';
+				}
+				// contryUser = countryItem === country ? country : 'se';
+
+				break;
 			}
 
 			console.log(contryUser);
