@@ -1572,6 +1572,10 @@ body {
 }
 
 @media (min-width: 992px) {
+	.address {
+		width: 50vw;
+	}
+
 	.address__title {
 		font-size: 46px;
 	}
