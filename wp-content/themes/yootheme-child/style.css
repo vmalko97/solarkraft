@@ -460,21 +460,21 @@ body {
 }
 
 .instruction {
-	padding: 30px 15px 15px;
-	margin-bottom: 65px;
-	display: none;
+	display: flex;
 	-webkit-box-pack: justify;
 	justify-content: space-between;
+	padding: 30px 0 15px;
+	margin-bottom: 65px;
 }
 
 .instruction__item {
-
 	display: flex;
 	flex-flow: row;
+	width: 240px;
 }
 
 .instruction__item:not(:last-child) {
-	margin-right: 15px;
+	margin-bottom: 5px;
 }
 
 .instruction__img {
@@ -707,7 +707,8 @@ body {
 }
 
 .warranty {
-	display: grid;
+	display: none;
+	/* display: grid; */
 	grid-template-rows: repeat(2, auto);
 	background-color: rgb(250, 250, 255);
 	background-image: linear-gradient(to right, rgb(255, 250, 247), rgb(255, 242, 235));
@@ -869,6 +870,10 @@ body {
 	letter-spacing: 0.0125em;
 }
 
+.types {
+	margin-bottom: 40px;
+}
+
 .types__title {
 	font-size: 26px;
 	padding: 10px 0;
@@ -963,7 +968,7 @@ body {
 	position: relative;
 	height: 250px;
 	width: 100%;
-	background-image: linear-gradient(to right, rgb(240, 244, 255), rgb(224, 234, 255));
+	background-image: #fff;
 	overflow: hidden;
 	margin-bottom: 30px;
 }
@@ -1432,8 +1437,14 @@ body {
 	}
 
 	.instruction {
-		display: flex;
+		flex-flow: column;
+		align-items: center;
 		padding-top: 25px;
+	}
+
+	.instruction__item:not(:last-child) {
+		margin-bottom: 0;
+		margin-right: 15px;
 	}
 
 	.instruction__img {
@@ -1452,7 +1463,7 @@ body {
 	}
 
 	.calc {
-		padding: 0 65px 35px;
+		padding: 0 35px 35px;
 	}
 
 	.calc__title {
