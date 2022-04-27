@@ -402,7 +402,7 @@ body {
 }
 
 .info__title {
-	margin: 0px;
+	text-align: center;
 	color: rgb(13, 13, 36);
 	font-size: 30px;
 	font-weight: 600;
@@ -919,7 +919,8 @@ body {
 	grid-area: 3 / 1 / 4;
 }
 
-.types__desc a {
+.types__desc a,
+.types__desc a:hover {
 	color: #FAA048;
 	text-decoration: none;
 }
