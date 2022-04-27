@@ -173,22 +173,21 @@ $(document).ready(function() {
 			}, "jsonp");
 		})
 		.then((country) => {
-			const countries = ['se', 'no', 'de', 'fo', 'is', 'fi', 'uk'];
+			const countries = ['se', 'no', 'de', 'fo', 'is', 'fi', 'gb'];
 			let contryUser;
 
-			console.log(country);
-
 			for (let countryItem of countries) {
-				if (countryItem === country) {
+				if (country === countryItem) {
 					contryUser = country;
-				} else if (countryItem === 'gb') {
-					contryUser = 'uk';
+
+					break;
+				} else if (country === 'gb') {
+					contryUser = 'gb';
+
+					break;
 				} else {
 					contryUser = 'se';
 				}
-				// contryUser = countryItem === country ? country : 'se';
-
-				break;
 			}
 
 			console.log(contryUser);
