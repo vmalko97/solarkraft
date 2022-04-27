@@ -20,7 +20,8 @@ $(document).ready(function() {
 				wp_ajax.url,
 				data,
 				(response) => {
-					closeModal();
+					$('.modal').removeClass('modal--active');
+					$('.modal-bg').removeClass('modal-bg--active');
 				}
 			);
 		});
