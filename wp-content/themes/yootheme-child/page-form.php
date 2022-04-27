@@ -202,7 +202,9 @@ $index = 1;
 				<div class="types__btns">
                     <?php
                     foreach ($solar_list as $index => $solar){ ?>
-					<button class="types__btn types__btn--active" type="button" name="button" data-value="<?=$solar['annual_production'];?>" data-name="<?=$index;?>">
+					<button class="types__btn <?php if($index == 1){
+                        echo "types__btn--active";
+                    }?>" type="button" name="button" data-value="<?=$solar['annual_production'];?>" data-name="<?=$index;?>">
 						<span class="types__name"><?=$solar['title']?></span>
 						<span class="types__value"></span>
 					</button>
@@ -255,7 +257,11 @@ $index = 1;
 		<h2 class="modal__title">Få erbjudande</h2>
 		<p class="modal__subtext">Priserna du såg gäller till lördag 7 maj.</p>
 		<p class="modal__text">Lämna dina uppgifter, så ringer vi dig för att diskutera detaljerna i ditt erbjudande och svara på alla dina frågor.</p>
-		<form class="form" action="index.html" method="post">
+		<form class="form" method="post">
+            <input type="hidden" name="action" value="solar_order" />
+            <input type="hidden" name="latitude">
+            <input type="hidden" name="longitude">
+            <input type="hidden" name="address">
 			<div class="form__field-wrap">
 				<label class="form__label" for="nameField">Förnamn och efternamn</label>
 				<input class="form__field" id="nameField" type="text" name="name">
