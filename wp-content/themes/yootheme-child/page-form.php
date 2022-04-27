@@ -257,9 +257,9 @@ $index = 1;
 	<div class="modal-bg"></div>
 	<div class="modal">
 		<div class="modal__content">
-			<h2 class="modal__title">Få erbjudande</h2>
-			<p class="modal__subtext">Priserna du såg gäller till lördag 7 maj.</p>
-			<p class="modal__text">Lämna dina uppgifter, så ringer vi dig för att diskutera detaljerna i ditt erbjudande och svara på alla dina frågor.</p>
+			<h2 class="modal__title"><?=$fields['modal_title']; ?></h2>
+			<p class="modal__subtext"><?=$fields['modal_subtitle']; ?></p>
+			<p class="modal__text"><?=$fields['modal_text']; ?></p>
 			<form class="form" id="solar_order" method="post">
 				<input type="hidden" name="action" value="solar_order" />
 				<input type="hidden" name="latitude">
@@ -281,9 +281,9 @@ $index = 1;
 				</div>
 				<label class="form__agree">
 					<input class="form__checkbox" type="checkbox">
-					<p class="form__agree-text">Jag vill lära mig mer om solceller och solenergi</p>
+					<p class="form__agree-text"><?=$fields['modal_agree_text']; ?></p>
 				</label>
-				<p class="form__desc">Lär dig mer om solenergi, stödsystem, produktnyheter och andra erbjudanden</p>
+				<p class="form__desc"><?=$fields['modal_description']; ?></p>
 				<button class="form__submit" type="submit">Skicka</button>
 			</form>
 		</div>
