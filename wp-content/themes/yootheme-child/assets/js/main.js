@@ -6,7 +6,7 @@ $(document).ready(function() {
 	toggleModal();
 	countryCode();
 	savingValue();
-	closeModal();
+	//closeModal();
 
 	function getCoords () {
 		if (!$('#solar_order').length) return;
@@ -20,7 +20,7 @@ $(document).ready(function() {
 				wp_ajax.url,
 				data,
 				(response) => {
-					openModalAfterLoadPage();
+					closeModal();
 				}
 			);
 		});
