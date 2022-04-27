@@ -48,7 +48,6 @@ $index = 1;
 			</address>
 			<div class="info__title-block">
 				<h1 class="info__title"><?=$fields['title']; ?></h1>
-				<p class="info__subtitle">Våra robotar har beräknat dina solpanelsalternativ och gjort det här paketet personligt för dig. <span class="info__subtitle-second"> Skrolla ned eller <button class="info__btn-calc" type="button"> klicka här</button> för att sätta samman ditt paket.</span></p>
 			</div>
 		</section>
 
