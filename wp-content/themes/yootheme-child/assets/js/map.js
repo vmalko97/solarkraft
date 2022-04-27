@@ -75,5 +75,6 @@ $(document).ready(function () {
     $('.map_to_form').on('click', function () {
         $('.map').hide();
         $('#form-page').show();
+        $('.map_to_form').hide();
     });
 });
