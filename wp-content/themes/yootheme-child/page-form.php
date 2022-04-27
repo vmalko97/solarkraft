@@ -9,7 +9,8 @@ get_header('calc');
 $fields = get_fields();
 
 $paramsCalc = [];
-
+$solar_list = [];
+$index = 1;
 foreach ($fields['solars'] as $solar){
     $paramsCalc[$solar['annual_production']] = [
             'title' => $solar['title'],
@@ -26,8 +27,10 @@ foreach ($fields['solars'] as $solar){
                     'size' => $solar['grid']['size']
             ],
     ];
+    $solar_list[$index] =  $solar;
+    $index++;
 }
-
+$index = 1;
 ?>
     <script>const paramsCalc = <?=json_encode($paramsCalc);?>; </script>
 
@@ -179,59 +182,50 @@ foreach ($fields['solars'] as $solar){
 			</div>
 			<div class="warranty__info">
 				<h3 class="warranty__title">
-					<mark class="warranty__mark">Ny!</mark>
-					Utökad garanti från Otovo ingår
+					<mark class="warranty__mark"><?=$fields['warranty_mark']; ?></mark>
+                    <?=$fields['waranry_title']; ?>
 				</h3>
-				<p class="warranty__desc">Vi säkerställer kvalitet i allt vi gör. Att vår utökade garanti ingår i priset är bevis på detta. Medan de flesta av våra konkurrenter väljer att endast erbjuda minimala 5 år, går vi ett steg längre:</p>
+				<p class="warranty__desc"><?=$fields['warranty_description']; ?></p>
+                <?php foreach ($fields['warranty_description'] as $field){ ?>
 				<p class="warranty__item">
 					<img class="warranty__icon" src="/wp-content/themes/yootheme-child/assets/images/check.svg" alt="check" />
-					Hela leasingperioden, upp till 20 år.
+                    <?=$field['description']; ?>
 				</p>
-				<p class="warranty__item">
-					<img class="warranty__icon" src="/wp-content/themes/yootheme-child/assets/images/check.svg" alt="check" />
-					10 år för direktköp.
-				</p>
-				<a href="#" class="warranty__link" target="_blank">Lär dig mer om våra garantier<img class="warranty__link-icon" src="/wp-content/themes/yootheme-child/assets/images/link.svg" alt="link" /></a>
+                <?php } ?>
+
+				<a href="<?=$fields['warranty_link'];?>" class="warranty__link" target="_blank"><?=$fields['warranty_link_title']; ?><img class="warranty__link-icon" src="/wp-content/themes/yootheme-child/assets/images/link.svg" alt="link" /></a>
 			</div>
 		</section>
 
 		<section class="types" id="types">
-			<h2 class="types__title">Välj typ av solpanel</h2>
+			<h2 class="types__title"><?=$fields['solar_types_title']; ?></h2>
 			<div class="types__wrap">
 				<div class="types__btns">
-					<button class="types__btn types__btn--active" type="button" name="button" data-value="4500" data-name="1">
-						<span class="types__name">Premium (11 panels)</span>
-						<span class="types__value">5KW</span>
+                    <?php
+                    foreach ($solar_list as $index => $solar){ ?>
+					<button class="types__btn types__btn--active" type="button" name="button" data-value="<?=$solar['annual_production'];?>" data-name="<?=$index;?>">
+						<span class="types__name"><?=$solar['title']?></span>
+						<span class="types__value"></span>
 					</button>
-					<button class="types__btn" type="button" name="button" data-value="7200" data-name="2">
-						<span class="types__name">Premium (18 panels)</span>
-						<span class="types__value">8KW</span>
-					</button>
-					<button class="types__btn" type="button" name="button" data-value="9000" data-name="3">
-						<span class="types__name">Premium(22 panels)</span>
-						<span class="types__value">10KW</span>
-					</button>
+                    <?php } ?>
 				</div>
 				<div class="types__details">
-					<h3 class="types__subtitle">Standardpaneler</h3>
+					<h3 class="types__subtitle"><?=$fields['solar_types_subtitle']; ?></h3>
 					<div class="types__content">
 						<h4 class="types__curr">
 							<img class="warranty__icon" src="/wp-content/themes/yootheme-child/assets/images/check-blue.svg" alt="check" />
-							<span class="types__title-name">Premium (11 panels) 5KW</span>
+							<span class="types__title-name"></span>
 						</h4>
 						<div class="types__desc">
-							<p>Production will depend on the location of the property, orientation of the roof, the angle of the panels and any shading.</p>
-							<p>Assumed cost per KWH 1.92 sek and using all generated electric in the home or to charge an electric vehicle</p>
-							<p>Pris med skattereduktion för grön teknik</p>
-							<a class="types__link" href="https://www.mjobackssparbank.se/privat/privatlan-och-krediter/sollan.html" target="_blank">Example uses a loan from Mjoback Sparbanks Sollån 2.1% over 12 years LINK and included skattereduktion för grön teknik</a>
-							<p>Based on 25 years, 3% annual increase in energy cost. This is an example only.</p>
+                            <?=$fields['solar_types_description']; ?>
 						</div>
 					</div>
 				</div>
 				<picture class="types__picture">
-					<img class="types__img" data-name="1" src="/wp-content/themes/yootheme-child/assets/images/standart.png" alt="standart panel">
-					<img class="types__img" data-name="2" src="/wp-content/themes/yootheme-child/assets/images/premium.png" alt="premium panel">
-					<img class="types__img" data-name="3" src="/wp-content/themes/yootheme-child/assets/images/performance.png" alt="performance panel">
+                    <?php
+                    foreach ($solar_list as $index => $solar){ ?>
+					<img class="types__img" data-name="<?=$index;?>" src="<?=$solar['photo']?>" alt="standart panel">
+					<?php } ?>
 				</picture>
 			</div>
 		</section>
