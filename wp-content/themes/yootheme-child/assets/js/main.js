@@ -27,7 +27,9 @@ $(document).ready(function() {
 	}
 
 	function closeModal () {
-		$('.form__submit').click(() => {
+		$('.form__submit').click((e) => {
+			e.preventDefault();
+			
 			$('.modal').removeClass('modal--active');
 			$('.modal-bg').removeClass('modal-bg--active');
 		});

@@ -284,7 +284,7 @@ $index = 1;
 					<p class="form__agree-text"><?=$fields['modal_agree_text']; ?></p>
 				</label>
 				<p class="form__desc"><?=$fields['modal_description']; ?></p>
-				<button class="form__submit" type="submit">Skicka</button>
+				<button class="form__submit" type="button">Skicka</button>
 			</form>
 		</div>
 		<button class="modal__close" type="button" name="button">
