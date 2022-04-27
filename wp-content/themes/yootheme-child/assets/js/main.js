@@ -6,7 +6,7 @@ $(document).ready(function() {
 	toggleModal();
 	countryCode();
 	savingValue();
-	//closeModal();
+	closeModal();
 
 	function getCoords () {
 		if (!$('#solar_order').length) return;
@@ -20,8 +20,7 @@ $(document).ready(function() {
 				wp_ajax.url,
 				data,
 				(response) => {
-					$('.modal').removeClass('modal--active');
-					$('.modal-bg').removeClass('modal-bg--active');
+					openModalAfterLoadPage();
 				}
 			);
 		});
@@ -174,13 +173,16 @@ $(document).ready(function() {
 			}, "jsonp");
 		})
 		.then((country) => {
-			console.log(country);
 			const countries = ['se', 'no', 'de', 'fo', 'is', 'fi', 'uk'];
 			let contryUser;
 
+			console.log(country);
+
 			for (let countryItem of countries) {
-				contryUser = countryItem === country ? countryItem : 'se';
+				contryUser = countryItem === country ? country : 'se';
 			}
+
+			console.log(contryUser);
 
 			if ($('#phoneField').length) {
 				$('#phoneField').CcPicker({
