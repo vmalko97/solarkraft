@@ -57,8 +57,6 @@ function initAutocomplete() {
 }
 
 $(document).ready(function () {
-    $('.init_marker').on('click', function () {
-        var address = $('.autocomplete_address').val();
         $.post(
             wp_ajax.url,
             {
@@ -74,8 +72,9 @@ $(document).ready(function () {
                 $('input[name="longitude"]').val(response.longitude);
                 $('input[name="latitude"]').val(response.latitude);
             });
-        // $('.address-form').hide();
-        // $('#map').show();
-        // $('.map-form').addClass('map-form--active');
+    $('.map_to_form').on('click', function () {
+        $('.map').hide();
+        $('#form-page').show();
+        $('.map_to_form').hide();
     });
 });

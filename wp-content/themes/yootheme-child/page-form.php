@@ -32,7 +32,10 @@ foreach ($fields['solars'] as $solar){
 }
 $index = 1;
 ?>
-<script>const paramsCalc = <?=json_encode($paramsCalc);?>;</script>
+<script>
+    const paramsCalc = <?=json_encode($paramsCalc);?>;
+    var address = "<?=$_POST['address']; ?>";
+</script>
 
 <div class="wrap">
 	<div id="form-page" class="container">
@@ -257,7 +260,7 @@ $index = 1;
 			<h2 class="modal__title">Få erbjudande</h2>
 			<p class="modal__subtext">Priserna du såg gäller till lördag 7 maj.</p>
 			<p class="modal__text">Lämna dina uppgifter, så ringer vi dig för att diskutera detaljerna i ditt erbjudande och svara på alla dina frågor.</p>
-			<form class="form" method="post">
+			<form class="form" id="solar_order" method="post">
 				<input type="hidden" name="action" value="solar_order" />
 				<input type="hidden" name="latitude">
 				<input type="hidden" name="longitude">
@@ -292,11 +295,7 @@ $index = 1;
 	<div class="map" id="map"></div>
 
 	<form class="map-form" id="solar_order" method="post">
-		<input type="hidden" name="action" value="solar_order" />
-		<input type="hidden" name="latitude">
-		<input type="hidden" name="longitude">
-		<input type="hidden" name="address">
-		<button type="submit" class="map-form__btn">
+		<button type="button" class="map-form__btn map_to_form">
 			Fortsätt
 			<img class="map-form__icon" src="/wp-content/themes/yootheme-child/assets/images/arrow.svg" alt="arrow">
 		</button>

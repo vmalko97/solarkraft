@@ -109,6 +109,11 @@ function async_create_solar_order(){
 $latitude = $_POST['latitude'];
 $longitude = $_POST['longitude'];
 $address = $_POST['address'];
+$name = $_POST['name'];
+$phone = $_POST['phoneField'];
+$phone_code = $_POST['phoneField_phoneConde'];
+$email = $_POST['email'];
+
 $coordinates = implode(',', [$latitude, $longitude]);
 $img_url = google_get_static_map_img_url($coordinates, $coordinates,19,"640x640","satellite");
 
@@ -126,6 +131,9 @@ $img_url = google_get_static_map_img_url($coordinates, $coordinates,19,"640x640"
         update_field('latitude', $latitude, $solar_order);
         update_field('longitude', $longitude, $solar_order);
         update_field('address', $address, $solar_order);
+        update_field('full_name', $name, $solar_order);
+        update_field('phone', '+'.$phone_code.$phone, $solar_order);
+        update_field('email', $email, $solar_order);
         update_field('map', [
             'address' => $address,
             'lat' => $latitude,
@@ -170,8 +178,12 @@ $img_url = google_get_static_map_img_url($coordinates, $coordinates,19,"640x640"
     <span>Address: $address</span><br/>
     <span>Latitude: $latitude</span><br/>
     <span>Longitude: $longitude</span><br/>
+    <span>Name: $name</span><br/>
+    <span>Phone: +".$phone_code.$phone."</span><br/>
+    <span>Email: $email</span><br/>
     <img src='".$map_snapshot."'>";
     wp_mail($admin_email,'New Solar Order', $message, ['content-type: text/html']);
+    wp_mail($email,'New Solar Order', $message, ['content-type: text/html']);
 
 exit(json_encode([
     'latitude' => $latitude,
