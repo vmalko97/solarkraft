@@ -13,7 +13,7 @@ $(document).ready(function() {
 		$('#solar_order').submit((e) => {
 			e.preventDefault();
 
-			const data = $(this).serialize();
+			const data = $(e.currentTarget).serialize();
 
 			$.post(
 				wp_ajax.url,

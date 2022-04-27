@@ -1554,8 +1554,7 @@ body {
 	.modal {
 		display: block;
 		max-width: 640px;
-		min-height: 500px;
-		max-height: 80vh;
+		height: auto;
 	}
 
 	.form__label,
