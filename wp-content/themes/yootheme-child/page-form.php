@@ -162,6 +162,41 @@ $index = 1;
 			</div>
 		</section>
 
+		<section class="types" id="types">
+			<h2 class="types__title"><?=$fields['solar_types_title']; ?></h2>
+			<div class="types__wrap">
+				<div class="types__btns">
+					<?php
+					foreach ($solar_list as $index => $solar){ ?>
+					<button class="types__btn <?php if($index == 1){
+						echo "types__btn--active";
+					}?>" type="button" name="button" data-value="<?=$solar['annual_production'];?>" data-name="<?=$index;?>">
+						<span class="types__name"><?=$solar['title']?></span>
+						<span class="types__value"></span>
+					</button>
+					<?php } ?>
+				</div>
+				<div class="types__details">
+					<h3 class="types__subtitle"><?=$fields['solar_types_subtitle']; ?></h3>
+					<div class="types__content">
+						<h4 class="types__curr">
+							<img class="warranty__icon" src="/wp-content/themes/yootheme-child/assets/images/check-blue.svg" alt="check" />
+							<span class="types__title-name"></span>
+						</h4>
+						<div class="types__desc">
+							<?=$fields['solar_types_description']; ?>
+						</div>
+					</div>
+				</div>
+				<picture class="types__picture">
+					<?php
+					foreach ($solar_list as $index => $solar){ ?>
+					<img class="types__img" data-name="<?=$index;?>" src="<?=$solar['photo']?>" alt="standart panel">
+					<?php } ?>
+				</picture>
+			</div>
+		</section>
+
 		<section class="warranty">
 			<div class="graph">
 				<div class="graph__item">
@@ -196,41 +231,6 @@ $index = 1;
 				<?php } ?>
 
 				<a href="<?=$fields['warranty_link'];?>" class="warranty__link" target="_blank"><?=$fields['warranty_link_title']; ?><img class="warranty__link-icon" src="/wp-content/themes/yootheme-child/assets/images/link.svg" alt="link" /></a>
-			</div>
-		</section>
-
-		<section class="types" id="types">
-			<h2 class="types__title"><?=$fields['solar_types_title']; ?></h2>
-			<div class="types__wrap">
-				<div class="types__btns">
-					<?php
-					foreach ($solar_list as $index => $solar){ ?>
-					<button class="types__btn <?php if($index == 1){
-						echo "types__btn--active";
-					}?>" type="button" name="button" data-value="<?=$solar['annual_production'];?>" data-name="<?=$index;?>">
-						<span class="types__name"><?=$solar['title']?></span>
-						<span class="types__value"></span>
-					</button>
-					<?php } ?>
-				</div>
-				<div class="types__details">
-					<h3 class="types__subtitle"><?=$fields['solar_types_subtitle']; ?></h3>
-					<div class="types__content">
-						<h4 class="types__curr">
-							<img class="warranty__icon" src="/wp-content/themes/yootheme-child/assets/images/check-blue.svg" alt="check" />
-							<span class="types__title-name"></span>
-						</h4>
-						<div class="types__desc">
-							<?=$fields['solar_types_description']; ?>
-						</div>
-					</div>
-				</div>
-				<picture class="types__picture">
-					<?php
-					foreach ($solar_list as $index => $solar){ ?>
-					<img class="types__img" data-name="<?=$index;?>" src="<?=$solar['photo']?>" alt="standart panel">
-					<?php } ?>
-				</picture>
 			</div>
 		</section>
 

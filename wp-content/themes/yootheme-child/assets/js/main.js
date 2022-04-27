@@ -28,7 +28,7 @@ $(document).ready(function() {
 	}
 
 	function closeModal () {
-		$('.form__submit').click(() => {	
+		$('.form__submit').click(() => {
 			$('.modal').removeClass('modal--active');
 			$('.modal-bg').removeClass('modal-bg--active');
 		});
@@ -174,6 +174,7 @@ $(document).ready(function() {
 			}, "jsonp");
 		})
 		.then((country) => {
+			console.log(country);
 			const countries = ['se', 'no', 'de', 'fo', 'is', 'fi', 'uk'];
 			let contryUser;
 
