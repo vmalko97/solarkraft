@@ -287,4 +287,8 @@ $index = 1;
 <?php
 
 get_footer('calc');
+}else{
+    ?>
+    <script>location.href = "<?=home_url();?>";</script>
+<?php
 }
