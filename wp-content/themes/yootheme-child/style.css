@@ -969,10 +969,9 @@ body {
 
 .types__img {
 	position: absolute;
-	width: 300%;
-	height: 300%;
+	width: 100%;
+	height: 100%;
 	object-fit: cover;
-	object-position: -320px center;
 }
 
 .types__desc {
