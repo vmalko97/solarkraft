@@ -125,13 +125,11 @@ $(document).ready(function() {
 		for (let point in paramsCalc) {
 			if (value === parseInt(point)) {
 				const { title, saving } = paramsCalc[point];
-				const lifetime = paramsCalc[point].grid.lifetime;
-
-				// console.log(lifetime);
+				const lifetime = paramsCalc[point].grid.lifetime.reduce((context, value, i) => context+= text = i === 0 ? value : ` - ${value}`, '');
 
 				$('.types__title-name').text(title);
 				$('.sticky-footer__saving').text(saving);
-				$('.sticky-footer__count').text(lifetime);
+				$('#savingPanel').text(lifetime);
 
 				break;
 			}

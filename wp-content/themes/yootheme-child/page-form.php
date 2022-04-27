@@ -240,7 +240,7 @@ $index = 1;
 					</div>
 					<div class="sticky-footer__block">
 						<h4 class="sticky-footer__title">Uppskattad besparing</h4>
-						<span class="sticky-footer__count">200 000 kr-270 000 kr</span>
+						<span id="savingPanel" class="sticky-footer__count">200 000 kr-270 000 kr</span>
 					</div>
 				</div>
 				<button class="sticky-footer__btn" id="openModal" type="button" name="button">
