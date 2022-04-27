@@ -6,6 +6,7 @@ $(document).ready(function() {
 	toggleModal();
 	countryCode();
 	savingValue();
+	closeModal();
 
 	function getCoords () {
 		if (!$('#solar_order').length) return;
@@ -19,13 +20,16 @@ $(document).ready(function() {
 				wp_ajax.url,
 				data,
 				(response) => {
-					$('#map').hide();
-					$('.map-form').hide();
-					$('#form-page').show();
-
 					openModalAfterLoadPage();
 				}
 			);
+		});
+	}
+
+	function closeModal () {
+		$('.form__submit').click(() => {
+			$('.modal').removeClass('modal--active');
+			$('.modal-bg').removeClass('modal-bg--active');
 		});
 	}
 
