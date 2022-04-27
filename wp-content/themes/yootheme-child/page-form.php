@@ -12,30 +12,30 @@ $paramsCalc = [];
 $solar_list = [];
 $index = 1;
 foreach ($fields['solars'] as $solar){
-    $paramsCalc[$solar['annual_production']] = [
-            'title' => $solar['title'],
-            'saving' => $solar['projected_monthly_saving'],
-            'info' => [
-                  'name' => $solar['info']['name'],
-                  'count' => $solar['info']['panels_count'],
-                  'kw' => $solar['info']['power'],
-            ],
-            'grid' => [
-                    'lifetime' => [ $solar['grid']['lifetime_estimated_return']['min'], $solar['grid']['lifetime_estimated_return']['max'] ],
-                    'annual' => $solar['grid']['projected_annual_saving_on_electric_bill'],
-                    'month' => $solar['grid']['projected_monthly_saving'],
-                    'size' => $solar['grid']['size']
-            ],
-    ];
-    $solar_list[$index] =  $solar;
-    $index++;
+	$paramsCalc[$solar['annual_production']] = [
+			'title' => $solar['title'],
+			'saving' => $solar['projected_monthly_saving'],
+			'info' => [
+				  'name' => $solar['info']['name'],
+				  'count' => $solar['info']['panels_count'],
+				  'kw' => $solar['info']['power'],
+			],
+			'grid' => [
+					'lifetime' => [ $solar['grid']['lifetime_estimated_return']['min'], $solar['grid']['lifetime_estimated_return']['max'] ],
+					'annual' => $solar['grid']['projected_annual_saving_on_electric_bill'],
+					'month' => $solar['grid']['projected_monthly_saving'],
+					'size' => $solar['grid']['size']
+			],
+	];
+	$solar_list[$index] =  $solar;
+	$index++;
 }
 $index = 1;
 ?>
-    <script>const paramsCalc = <?=json_encode($paramsCalc);?>; </script>
+<script>const paramsCalc = <?=json_encode($paramsCalc);?>;</script>
 
 <div class="wrap">
-	<div class="container">
+	<div id="form-page" class="container">
 		<section class="info">
 			<address class="info__address">
 				<figure class="info__icon">
@@ -182,15 +182,15 @@ $index = 1;
 			<div class="warranty__info">
 				<h3 class="warranty__title">
 					<mark class="warranty__mark"><?=$fields['warranty_mark']; ?></mark>
-                    <?=$fields['waranry_title']; ?>
+					<?=$fields['waranry_title']; ?>
 				</h3>
 				<p class="warranty__desc"><?=$fields['warranty_description']; ?></p>
-                <?php foreach ($fields['warranty_description'] as $field){ ?>
+				<?php foreach ($fields['warranty_description'] as $field){ ?>
 				<p class="warranty__item">
 					<img class="warranty__icon" src="/wp-content/themes/yootheme-child/assets/images/check.svg" alt="check" />
-                    <?=$field['description']; ?>
+					<?=$field['description']; ?>
 				</p>
-                <?php } ?>
+				<?php } ?>
 
 				<a href="<?=$fields['warranty_link'];?>" class="warranty__link" target="_blank"><?=$fields['warranty_link_title']; ?><img class="warranty__link-icon" src="/wp-content/themes/yootheme-child/assets/images/link.svg" alt="link" /></a>
 			</div>
@@ -200,15 +200,15 @@ $index = 1;
 			<h2 class="types__title"><?=$fields['solar_types_title']; ?></h2>
 			<div class="types__wrap">
 				<div class="types__btns">
-                    <?php
-                    foreach ($solar_list as $index => $solar){ ?>
+					<?php
+					foreach ($solar_list as $index => $solar){ ?>
 					<button class="types__btn <?php if($index == 1){
-                        echo "types__btn--active";
-                    }?>" type="button" name="button" data-value="<?=$solar['annual_production'];?>" data-name="<?=$index;?>">
+						echo "types__btn--active";
+					}?>" type="button" name="button" data-value="<?=$solar['annual_production'];?>" data-name="<?=$index;?>">
 						<span class="types__name"><?=$solar['title']?></span>
 						<span class="types__value"></span>
 					</button>
-                    <?php } ?>
+					<?php } ?>
 				</div>
 				<div class="types__details">
 					<h3 class="types__subtitle"><?=$fields['solar_types_subtitle']; ?></h3>
@@ -218,13 +218,13 @@ $index = 1;
 							<span class="types__title-name"></span>
 						</h4>
 						<div class="types__desc">
-                            <?=$fields['solar_types_description']; ?>
+							<?=$fields['solar_types_description']; ?>
 						</div>
 					</div>
 				</div>
 				<picture class="types__picture">
-                    <?php
-                    foreach ($solar_list as $index => $solar){ ?>
+					<?php
+					foreach ($solar_list as $index => $solar){ ?>
 					<img class="types__img" data-name="<?=$index;?>" src="<?=$solar['photo']?>" alt="standart panel">
 					<?php } ?>
 				</picture>
@@ -253,47 +253,60 @@ $index = 1;
 
 	<div class="modal-bg"></div>
 	<div class="modal">
-	<div class="modal__content">
-		<h2 class="modal__title">Få erbjudande</h2>
-		<p class="modal__subtext">Priserna du såg gäller till lördag 7 maj.</p>
-		<p class="modal__text">Lämna dina uppgifter, så ringer vi dig för att diskutera detaljerna i ditt erbjudande och svara på alla dina frågor.</p>
-		<form class="form" method="post">
-            <input type="hidden" name="action" value="solar_order" />
-            <input type="hidden" name="latitude">
-            <input type="hidden" name="longitude">
-            <input type="hidden" name="address">
-			<div class="form__field-wrap">
-				<label class="form__label" for="nameField">Förnamn och efternamn</label>
-				<input class="form__field" id="nameField" type="text" name="name">
-			</div>
-			<div class="form__field-wrap">
-				<label class="form__label" for="phoneField">Telefon</label>
-				<div class="form__wrap">
-					<input class="form__field" id="phoneField" type="text" maxlength="11" name="phoneField">
+		<div class="modal__content">
+			<h2 class="modal__title">Få erbjudande</h2>
+			<p class="modal__subtext">Priserna du såg gäller till lördag 7 maj.</p>
+			<p class="modal__text">Lämna dina uppgifter, så ringer vi dig för att diskutera detaljerna i ditt erbjudande och svara på alla dina frågor.</p>
+			<form class="form" method="post">
+				<input type="hidden" name="action" value="solar_order" />
+				<input type="hidden" name="latitude">
+				<input type="hidden" name="longitude">
+				<input type="hidden" name="address">
+				<div class="form__field-wrap">
+					<label class="form__label" for="nameField">Förnamn och efternamn</label>
+					<input class="form__field" id="nameField" type="text" name="name">
 				</div>
-			</div>
-			<div class="form__field-wrap">
-				<label class="form__label" for="emailField">E-post</label>
-				<input class="form__field" id="emailField" type="email" name="email">
-			</div>
-			<label class="form__agree">
-				<input class="form__checkbox" type="checkbox">
-				<p class="form__agree-text">Jag vill lära mig mer om solceller och solenergi</p>
-			</label>
-			<p class="form__desc">Lär dig mer om solenergi, stödsystem, produktnyheter och andra erbjudanden</p>
-			<button class="form__submit" type="submit">Skicka</button>
-		</form>
+				<div class="form__field-wrap">
+					<label class="form__label" for="phoneField">Telefon</label>
+					<div class="form__wrap">
+						<input class="form__field" id="phoneField" type="text" maxlength="11" name="phoneField">
+					</div>
+				</div>
+				<div class="form__field-wrap">
+					<label class="form__label" for="emailField">E-post</label>
+					<input class="form__field" id="emailField" type="email" name="email">
+				</div>
+				<label class="form__agree">
+					<input class="form__checkbox" type="checkbox">
+					<p class="form__agree-text">Jag vill lära mig mer om solceller och solenergi</p>
+				</label>
+				<p class="form__desc">Lär dig mer om solenergi, stödsystem, produktnyheter och andra erbjudanden</p>
+				<button class="form__submit" type="submit">Skicka</button>
+			</form>
+		</div>
+		<button class="modal__close" type="button" name="button">
+			<img class="modal__icon" src="/wp-content/themes/yootheme-child/assets/images/cancel.svg" alt="cancel">
+		</button>
 	</div>
-	<button class="modal__close" type="button" name="button">
-		<img class="modal__icon" src="/wp-content/themes/yootheme-child/assets/images/cancel.svg" alt="cancel">
-	</button>
-</div>
+
+	<div class="map" id="map"></div>
+
+	<form class="map-form" id="solar_order" method="post">
+		<input type="hidden" name="action" value="solar_order" />
+		<input type="hidden" name="latitude">
+		<input type="hidden" name="longitude">
+		<input type="hidden" name="address">
+		<button type="submit" class="map-form__btn">
+			Fortsätt
+			<img class="map-form__icon" src="/wp-content/themes/yootheme-child/assets/images/arrow.svg" alt="arrow">
+		</button>
+	</form>
 </div>
 <?php
 
 get_footer('calc');
 }else{
-    ?>
-    <script>location.href = "<?=home_url();?>";</script>
+	?>
+	<script>location.href = "<?=home_url();?>";</script>
 <?php
 }

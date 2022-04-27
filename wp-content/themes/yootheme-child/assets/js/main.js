@@ -1,12 +1,9 @@
 $(document).ready(function() {
-
-
 	getCoords ();
 	activePackage();
 	transferToTypes();
 	rangeCalc();
 	toggleModal();
-	openModalAfterLoadPage();
 	countryCode();
 	savingValue();
 
@@ -23,7 +20,10 @@ $(document).ready(function() {
 				data,
 				(response) => {
 					$('#map').hide();
-					$('.map-form').removeClass('map-form--active');
+					$('.map-form').hide();
+					$('#form-page').show();
+
+					openModalAfterLoadPage();
 				}
 			);
 		});
@@ -125,9 +125,13 @@ $(document).ready(function() {
 		for (let point in paramsCalc) {
 			if (value === parseInt(point)) {
 				const { title, saving } = paramsCalc[point];
+				const lifetime = paramsCalc[point].grid.lifetime;
+
+				// console.log(lifetime);
 
 				$('.types__title-name').text(title);
 				$('.sticky-footer__saving').text(saving);
+				$('.sticky-footer__count').text(lifetime);
 
 				break;
 			}
@@ -176,7 +180,7 @@ $(document).ready(function() {
 
 			if ($('#phoneField').length) {
 				$('#phoneField').CcPicker({
-					dataUrl: './wp-content/themes/yootheme-child/assets/js/data.json',
+					dataUrl: '/wp-content/themes/yootheme-child/assets/js/data.json',
 					countryCode: contryUser
 				});
 			}

@@ -145,17 +145,17 @@ body {
 }
 
 .map {
-	display: none;
+	/* display: none; */
 	width: 80vw;
 	height: 70vh;
 	margin: 0 auto 20px;
 }
 
-.map-form {
+/* .map-form {
 	display: none;
-}
+} */
 
-.map-form--active {
+.map-form {
 	display: -webkit-flex;
 	display: -ms-flex;
 	display: flex;
@@ -195,6 +195,10 @@ body {
 
 #address {
 	padding: 0;
+}
+
+.address {
+	width: 80vw;
 }
 
 .address-form {
@@ -279,7 +283,6 @@ body {
 
 .address__form {
 	position: relative;
-	transform: translateY(25px);
 }
 
 .address__input-wrap {
@@ -1331,6 +1334,10 @@ body {
 	width: 100%;
 }
 
+#form-page {
+	display: none;
+}
+
 @media (min-width: 480px) {
 	.container {
 		padding: 0 30px;
@@ -1547,7 +1554,8 @@ body {
 	.modal {
 		display: block;
 		max-width: 640px;
-		max-height: 500px;
+		min-height: 500px;
+		max-height: 80vh;
 	}
 
 	.form__label,

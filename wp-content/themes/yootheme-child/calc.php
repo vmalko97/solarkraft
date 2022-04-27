@@ -48,19 +48,6 @@ if (function_exists('get_fields')) {
 	</div>
 </section>
 
-<div class="map" id="map"></div>
-
-<form class="map-form" id="solar_order" method="post">
-    <input type="hidden" name="action" value="solar_order" />
-    <input type="hidden" name="latitude">
-    <input type="hidden" name="longitude">
-    <input type="hidden" name="address">
-    <button type="submit" class="map-form__btn">
-		Fortsätt
-		<img class="map-form__icon" src="/wp-content/themes/yootheme-child/assets/images/arrow.svg" alt="arrow">
-	</button>
-</form>
-
 <?php
 }
 get_footer('calc');

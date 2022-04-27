@@ -74,8 +74,8 @@ $(document).ready(function () {
                 $('input[name="longitude"]').val(response.longitude);
                 $('input[name="latitude"]').val(response.latitude);
             });
-        $('.address-form').hide();
-        $('#map').show();
-        $('.map-form').addClass('map-form--active');
+        // $('.address-form').hide();
+        // $('#map').show();
+        // $('.map-form').addClass('map-form--active');
     });
 });
