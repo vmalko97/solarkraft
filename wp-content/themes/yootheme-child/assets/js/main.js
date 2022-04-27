@@ -169,7 +169,7 @@ $(document).ready(function() {
 			}, "jsonp");
 		})
 		.then((country) => {
-			const countries = ['se', 'no', 'fi', 'uk'];
+			const countries = ['se', 'no', 'de', 'fo', 'is', 'fi', 'uk'];
 			let contryUser;
 
 			for (let countryItem of countries) {
