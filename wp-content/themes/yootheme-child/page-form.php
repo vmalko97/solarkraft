@@ -15,7 +15,8 @@ foreach ($fields['solars'] as $solar){
 	$paramsCalc[$solar['annual_production']] = [
 			'title' => $solar['title'],
 			'saving' => $solar['projected_monthly_saving'],
-			'info' => [
+            'sumwatts' =>$solar['sumwatts']['min']. '/'. $solar['sumwatts']['max'],
+        'info' => [
 				  'name' => $solar['info']['name'],
 				  'count' => $solar['info']['panels_count'],
 				  'kw' => $solar['info']['power'],
