@@ -258,7 +258,7 @@ $index = 1;
 	<div class="modal">
 		<div class="modal__content">
 			<h2 class="modal__title"><?=$fields['modal_title']; ?></h2>
-			<p class="modal__subtext"><?=$fields['modal_subtitle']; ?></p>
+			<!-- <p class="modal__subtext"><?=$fields['modal_subtitle']; ?></p> -->
 			<p class="modal__text"><?=$fields['modal_text']; ?></p>
 			<form class="form" id="solar_order" method="post">
 				<input type="hidden" name="action" value="solar_order" />
