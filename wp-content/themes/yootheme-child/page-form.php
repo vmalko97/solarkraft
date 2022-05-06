@@ -276,10 +276,14 @@ $index = 1;
 						<input class="form__field" id="phoneField" type="text" maxlength="11" name="phoneField">
 					</div>
 				</div>
-				<div class="form__field-wrap">
-					<label class="form__label" for="emailField">E-post</label>
-					<input class="form__field" id="emailField" type="email" name="email">
-				</div>
+                <div class="form__field-wrap">
+                    <label class="form__label" for="emailField">E-post</label>
+                    <input class="form__field" id="emailField" type="email" name="email">
+                </div>
+                <div class="form__field-wrap">
+                    <label class="form__label" for="message">Har du några specifika önskemål vi behöver ha information om?</label>
+                    <textarea id="message" class="form__field" name="message"></textarea>
+                </div>
 				<label class="form__agree">
 					<input class="form__checkbox" type="checkbox">
 					<p class="form__agree-text"><?=$fields['modal_agree_text']; ?></p>
