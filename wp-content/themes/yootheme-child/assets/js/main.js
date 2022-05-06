@@ -34,9 +34,9 @@ $(document).ready(function() {
 	}
 
 	function savingValue () {
-		if (!$('.types__btn--active').length) return;
+		if (!$('.tabs__btn--active').length) return;
 
-		const dataValue = $('.types__btn--active').data('value');
+		const dataValue = $('.tabs__btn--active').data('value');
 
 		setSavingAndTitle(dataValue);
 		breakPointsCalc(dataValue);
@@ -44,16 +44,16 @@ $(document).ready(function() {
 	}
 
 	function activePackage () {
-		if (!$('.types__btn').length) return;
+		if (!$('.tabs__btn').length) return;
 
-		$('.types__btn').click(({ currentTarget }) => {
+		$('.tabs__btn').click(({ currentTarget }) => {
 			const dataName = $(currentTarget).data('name');
 			const dataValue = $(currentTarget).data('value');
 
-			$('.types__btn').removeClass('types__btn--active');
+			$('.tabs__btn').removeClass('tabs__btn--active');
 			$('.types__img').fadeOut();
 
-			$(currentTarget).addClass('types__btn--active');
+			$(currentTarget).addClass('tabs__btn--active');
 			$(`.types__img[data-name=${dataName}]`).fadeIn();
 
 			setSavingAndTitle(dataValue);
@@ -96,7 +96,6 @@ $(document).ready(function() {
 	function breakPointsCalc (value) {
 		for (let point in paramsCalc) {
 			if (value === parseInt(point)) {
-				console.log(paramsCalc[point].grid);
 				for (let option in paramsCalc[point].grid) {
 					if (option === 'lifetime') {
 						[from, to] = paramsCalc[point].grid[option];
@@ -190,8 +189,6 @@ $(document).ready(function() {
 					contryUser = 'se';
 				}
 			}
-
-			console.log(contryUser);
 
 			if ($('#phoneField').length) {
 				$('#phoneField').CcPicker({

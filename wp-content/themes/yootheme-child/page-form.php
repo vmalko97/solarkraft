@@ -88,7 +88,18 @@ $index = 1;
 		<section class="calc">
 			<h2 class="calc__title"><?=$fields['calc_title']; ?></h2>
 			<div class="calc__section">
-				<div class="calc__control">
+				<div class="tabs">
+					<?php
+					foreach ($solar_list as $index => $solar){ ?>
+					<button class="tabs__btn <?php if($index == 1){
+						echo "tabs__btn--active";
+					}?>" type="button" name="button" data-value="<?=$solar['annual_production'];?>" data-name="<?=$index;?>">
+						<span class="tabs__name"><?=$solar['title']?></span>
+						<span class="tabs__value"></span>
+					</button>
+					<?php } ?>
+				</div>
+				<!-- <div class="calc__control">
 					<h3 class="calc__subtitle"><?=$fields['calc_subtitle']; ?></h3>
 					<p class="calc__desc"><?=$fields['calc_description']; ?></p>
 					<input type="text" class="calc__num" value="2000" id="amount" data-min="1000" data-max="9000" readonly>
@@ -103,7 +114,7 @@ $index = 1;
 						<input type="checkbox" name="switch" id="switch">
 						<span class="calc__name">Inkludera batterier</span>
 					</label>
-				</div>
+				</div> -->
 				<div class="grid">
 					<div class="grid__item">
 						<img class="grid__icon" src="<?=$fields['grid_first_item_icon']; ?>" alt="grid-1">
@@ -166,17 +177,6 @@ $index = 1;
 		<section class="types" id="types">
 			<h2 class="types__title"><?=$fields['solar_types_title']; ?></h2>
 			<div class="types__wrap">
-				<div class="types__btns">
-					<?php
-					foreach ($solar_list as $index => $solar){ ?>
-					<button class="types__btn <?php if($index == 1){
-						echo "types__btn--active";
-					}?>" type="button" name="button" data-value="<?=$solar['annual_production'];?>" data-name="<?=$index;?>">
-						<span class="types__name"><?=$solar['title']?></span>
-						<span class="types__value"></span>
-					</button>
-					<?php } ?>
-				</div>
 				<div class="types__details">
 					<h3 class="types__subtitle"><?=$fields['solar_types_subtitle']; ?></h3>
 					<div class="types__content">
@@ -189,12 +189,12 @@ $index = 1;
 						</div>
 					</div>
 				</div>
-				<picture class="types__picture">
+				<!-- <picture class="types__picture">
 					<?php
 					foreach ($solar_list as $index => $solar){ ?>
 					<img class="types__img" data-name="<?=$index;?>" src="<?=$solar['photo']?>" alt="standart panel">
 					<?php } ?>
-				</picture>
+				</picture> -->
 			</div>
 		</section>
 
