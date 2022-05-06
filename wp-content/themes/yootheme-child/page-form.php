@@ -270,16 +270,16 @@ $index = 1;
 					<label class="form__label" for="nameField">Förnamn och efternamn</label>
 					<input class="form__field" id="nameField" type="text" name="name">
 				</div>
+                <div class="form__field-wrap">
+                    <label class="form__label" for="emailField">E-post</label>
+                    <input class="form__field" id="emailField" type="email" name="email">
+                </div>
 				<div class="form__field-wrap">
 					<label class="form__label" for="phoneField">Telefon</label>
 					<div class="form__wrap">
 						<input class="form__field" id="phoneField" type="text" maxlength="11" name="phoneField">
 					</div>
 				</div>
-                <div class="form__field-wrap">
-                    <label class="form__label" for="emailField">E-post</label>
-                    <input class="form__field" id="emailField" type="email" name="email">
-                </div>
                 <div class="form__field-wrap">
                     <label class="form__label" for="message">Har du några specifika önskemål vi behöver ha information om?</label>
                     <textarea id="message" class="form__field" name="message"></textarea>
