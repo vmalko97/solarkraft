@@ -61,7 +61,7 @@ $index = 1;
 					<h3 class="instruction__title">
 						<span class="instruction__name" data-name="name">Standard - 360W</span>
 					</h3>
-					<span class="instruction__desc"><?=$fields['first_icon_decription']; ?></span>
+					<span class="instruction__desc" data-name="name"></span>
 				</div>
 			</div>
 			<div class="instruction__item">

@@ -118,6 +118,7 @@ $(document).ready(function() {
 			if (value === parseInt(point)) {
 				for (let option in paramsCalc[point].info) {
 					$(`.instruction__name[data-name=${option}]`).text(paramsCalc[point].info[option]);
+					$(`.instruction__desc[data-name=${option}]`).text(paramsCalc[point].sumWatts);
 				}
 
 				break;
