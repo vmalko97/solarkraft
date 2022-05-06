@@ -1,12 +1,12 @@
 $(document).ready(function() {
-	getCoords ();
+	getCoords();
 	activePackage();
 	transferToTypes();
 	rangeCalc();
 	toggleModal();
 	countryCode();
 	savingValue();
-	closeModal();
+	showFormPage();
 
 	function getCoords () {
 		if (!$('#solar_order').length) return;
@@ -18,23 +18,33 @@ $(document).ready(function() {
 
 			$.post(
 				wp_ajax.url,
-				data,
-				(response) => {
-					openModalAfterLoadPage();
-				}
+				data
 			);
 		});
 	}
 
 	function closeModal () {
-		$('.form__submit').click(() => {
+		if ($('.form__submit').length) return;
+
+		$('.form__submit').click((e) => {
 			const regEmail = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/gi;
 			const emailVal = $('#emailField').val();
+			const formFields = $('#solar_order').find('.form__field');
+			const result = regEmail.test(emailVal);
 
-			if (!regEmail.test(emailVal)) return;
+			if (result) {
+				// console.log('Success');
+				$('.modal').removeClass('modal--active');
+				$('.modal-bg').removeClass('modal-bg--active');
 
-			$('.modal').removeClass('modal--active');
-			$('.modal-bg').removeClass('modal-bg--active');
+				[...formFields].forEach((field) => $(field).val(''));
+				$(e.currentTarget).submit();
+			} else {
+				// console.log('Error');
+				e.preventDefault();
+
+				return;
+			}
 		});
 	}
 
@@ -201,6 +211,16 @@ $(document).ready(function() {
 					countryCode: contryUser
 				});
 			}
+		});
+	}
+
+	function showFormPage () {
+		$('.map_to_form').click(() => {
+			$('.address-page').hide();
+			$('#form-page').show();
+
+			openModalAfterLoadPage();
+			closeModal();
 		});
 	}
 });

@@ -1232,6 +1232,10 @@ body {
 	padding-left: 85px;
 }
 
+.form__field--textarea {
+	resize: none;
+}
+
 .form__field-wrap {
 	margin-bottom: 15px;
 }
@@ -1360,6 +1364,10 @@ body {
 }
 
 #form-page {
+	display: none;
+}
+
+.ginger-module-highlighter-mistake-type-1 {
 	display: none;
 }
 

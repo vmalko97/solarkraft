@@ -72,8 +72,4 @@ $(document).ready(function () {
                 $('input[name="longitude"]').val(response.longitude);
                 $('input[name="latitude"]').val(response.latitude);
             });
-    $('.map_to_form').on('click', function () {
-        $('.address-page').hide();
-        $('#form-page').show();
-    });
 });

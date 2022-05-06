@@ -272,17 +272,17 @@ $index = 1;
 				</div>
                 <div class="form__field-wrap">
                     <label class="form__label" for="emailField">E-post</label>
-                    <input class="form__field" id="emailField" type="email" name="email">
+                    <input class="form__field" id="emailField" type="email" name="email" required>
                 </div>
 				<div class="form__field-wrap">
 					<label class="form__label" for="phoneField">Telefon</label>
 					<div class="form__wrap">
-						<input class="form__field" id="phoneField" type="text" maxlength="11" name="phoneField">
+						<input class="form__field" id="phoneField" type="text" minlength="9" maxlength="11" name="phoneField">
 					</div>
 				</div>
                 <div class="form__field-wrap">
-                    <label class="form__label" for="message">Har du några specifika önskemål vi behöver ha information om?</label>
-                    <textarea id="message" class="form__field" name="message"></textarea>
+                    <label class="form__label" for="messageField">Har du några specifika önskemål vi behöver ha information om?</label>
+                    <textarea id="messageField" class="form__field form__field--textarea" name="message"></textarea>
                 </div>
 				<label class="form__agree">
 					<input class="form__checkbox" type="checkbox">
