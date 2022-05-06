@@ -144,24 +144,24 @@ body {
 	padding: 0px 15px;
 }
 
-.map {
-	/* display: none; */
+.address-page {
+	padding-bottom: 10px;
+}
+
+.address-page__map {
 	width: 80vw;
 	height: 70vh;
 	margin: 0 auto 20px;
 }
 
-/* .map-form {
-	display: none;
-} */
-
-.map-form {
+.address-page__form {
 	display: -webkit-flex;
 	display: -ms-flex;
 	display: flex;
+	margin-bottom: 10px;
 }
 
-.map-form__btn {
+.address-page__btn {
 	display: inline-flex;
 	border-radius: 40px;
 	min-width: 160px;
@@ -184,9 +184,16 @@ body {
 	background-color: #FAA048;
 }
 
-.map-form__icon {
+.address-page__icon {
 	width: 20px;
 	height: 20px;
+}
+
+.address-page__text {
+	font-size: 16px;
+	line-height: 20px;
+	color: #000;
+	text-align: center;
 }
 
 .wrap {

@@ -292,14 +292,16 @@ $index = 1;
 		</button>
 	</div>
 
-	<div class="map" id="map"></div>
-
-	<form class="map-form" id="solar_order" method="post">
-		<button type="button" class="map-form__btn map_to_form">
-			Fortsätt
-			<img class="map-form__icon" src="/wp-content/themes/yootheme-child/assets/images/arrow.svg" alt="arrow">
-		</button>
-	</form>
+	<div class="address-page">
+		<div class="address-page__map" id="map"></div>
+		<form class="address-page__form" id="solar_order" method="post">
+			<button type="button" class="address-page__btn map_to_form">
+				Fortsätt
+				<img class="address-page__icon" src="/wp-content/themes/yootheme-child/assets/images/arrow.svg" alt="arrow">
+			</button>
+		</form>
+		<p class="address-page__text">Var vänlig och markera i vilket tak panelerna ska installeras.</p>
+	</div>
 </div>
 <?php
 

@@ -73,8 +73,7 @@ $(document).ready(function () {
                 $('input[name="latitude"]').val(response.latitude);
             });
     $('.map_to_form').on('click', function () {
-        $('.map').hide();
+        $('.address-page').hide();
         $('#form-page').show();
-        $('.map_to_form').hide();
     });
 });
