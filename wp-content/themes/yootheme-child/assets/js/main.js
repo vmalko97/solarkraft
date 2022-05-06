@@ -28,6 +28,11 @@ $(document).ready(function() {
 
 	function closeModal () {
 		$('.form__submit').click(() => {
+			const regEmail = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/gi;
+			const emailVal = $('#emailField').val();
+
+			if (!regEmail.test(emailVal)) return;
+
 			$('.modal').removeClass('modal--active');
 			$('.modal-bg').removeClass('modal-bg--active');
 		});
