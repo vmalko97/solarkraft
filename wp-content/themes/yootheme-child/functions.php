@@ -113,6 +113,7 @@ $name = $_POST['name'];
 $phone = $_POST['phoneField'];
 $phone_code = $_POST['phoneField_phoneCode'];
 $email = $_POST['email'];
+$message = $_POST['message'];
 
 $coordinates = implode(',', [$latitude, $longitude]);
 $img_url = google_get_static_map_img_url($coordinates, $coordinates,19,"640x640","satellite");
@@ -181,6 +182,7 @@ $img_url = google_get_static_map_img_url($coordinates, $coordinates,19,"640x640"
     <span>Name: $name</span><br/>
     <span>Phone: +".$phone_code.$phone."</span><br/>
     <span>Email: $email</span><br/>
+    <span>Message: $message</span><br/>
     <img src='".$map_snapshot."'>";
     wp_mail($admin_email,'New Solar Order', $message, ['content-type: text/html']);
     wp_mail($email,'New Solar Order', $message, ['content-type: text/html']);
