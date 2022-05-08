@@ -272,7 +272,7 @@ $index = 1;
 				</div>
                 <div class="form__field-wrap">
                     <label class="form__label" for="emailField">E-post</label>
-                    <input class="form__field" id="emailField" type="email" name="email" required>
+                    <input class="form__field" id="emailField" type="email" name="email">
                 </div>
 				<div class="form__field-wrap">
 					<label class="form__label" for="phoneField">Telefon</label>
