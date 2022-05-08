@@ -1217,7 +1217,7 @@ body {
 	height: 11px;
 	margin-right: 7px;
 	display: inline-block;
-	background: url(./assets/images/flags.png);
+	background: url(../images/flags.png);
 	position: relative;
 	top: 1px;
 }
