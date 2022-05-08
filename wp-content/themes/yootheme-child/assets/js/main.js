@@ -17,13 +17,12 @@ $(document).ready(function() {
 			const result = regEmail.test(emailVal);
 			const data = $(e.currentTarget).parent().serialize();
 
+			e.preventDefault();
+
 			if (result) {
 				console.log('Success');
 
-				$.post(
-					wp_ajax.url,
-					data
-				);
+				$.post(wp_ajax.url,	data);
 
 				$('.modal').removeClass('modal--active');
 				$('.modal-bg').removeClass('modal-bg--active');
@@ -32,7 +31,6 @@ $(document).ready(function() {
 				$('.form__checkbox').prop('checked', false);
 			} else {
 				console.log('Error');
-				e.preventDefault();
 
 				return;
 			}
