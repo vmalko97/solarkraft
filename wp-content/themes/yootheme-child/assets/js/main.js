@@ -1,5 +1,4 @@
 $(document).ready(function() {
-	getCoords();
 	activePackage();
 	transferToTypes();
 	rangeCalc();
@@ -8,39 +7,31 @@ $(document).ready(function() {
 	savingValue();
 	showFormPage();
 
-	function getCoords () {
-		if (!$('#solar_order').length) return;
-
-		$('#solar_order').submit((e) => {
-			e.preventDefault();
-
-			const data = $(e.currentTarget).serialize();
-
-			$.post(
-				wp_ajax.url,
-				data
-			);
-		});
-	}
-
 	function closeModal () {
-		if ($('.form__submit').length) return;
+		if (!$('.form__submit').length) return;
 
 		$('.form__submit').click((e) => {
 			const regEmail = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/gi;
 			const emailVal = $('#emailField').val();
 			const formFields = $('#solar_order').find('.form__field');
 			const result = regEmail.test(emailVal);
+			const data = $(e.currentTarget).parent().serialize();
 
 			if (result) {
-				// console.log('Success');
+				console.log('Success');
+
+				$.post(
+					wp_ajax.url,
+					data
+				);
+
 				$('.modal').removeClass('modal--active');
 				$('.modal-bg').removeClass('modal-bg--active');
 
 				[...formFields].forEach((field) => $(field).val(''));
-				$(e.currentTarget).submit();
+				$('.form__checkbox').prop('checked', false);
 			} else {
-				// console.log('Error');
+				console.log('Error');
 				e.preventDefault();
 
 				return;

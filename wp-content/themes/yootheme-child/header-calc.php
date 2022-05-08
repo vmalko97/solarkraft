@@ -126,7 +126,7 @@ $attrs_main_section['class'][] = $layout == 'post' && $config('~theme.post.paddi
 
         <?php if (!$config('app.isBuilder')) : ?>
 
-        <div id="address" <?= $view->attrs($attrs_main_section) ?> uk-height-viewport="expand: true">
+        <div id="address" <?= $view->attrs($attrs_main_section) ?>>
 
 
                 <?php if (is_active_sidebar('sidebar', true)) :
