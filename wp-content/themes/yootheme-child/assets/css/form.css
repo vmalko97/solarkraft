@@ -1379,6 +1379,8 @@ body {
 .el-image {
 	width: 150px;
 	height: 100px;
+	margin: 0 auto;
+	display: block;
 }
 
 @media (min-width: 480px) {
