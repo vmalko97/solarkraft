@@ -1376,6 +1376,11 @@ body {
 	display: none;
 }
 
+.el-image {
+	width: 150px;
+	height: 100px;
+}
+
 @media (min-width: 480px) {
 	.container {
 		padding: 0 30px;
