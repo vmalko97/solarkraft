@@ -4,3 +4,11 @@ wp-content/themes/yootheme/cache/
 wp-config.php
 .ftpconfig
 *.log
+
+# WP backups
+wp-content/backups-dup-lite/
+*.zip
+
+# WP backups
+wp-content/backups-dup-lite/
+*.zip
